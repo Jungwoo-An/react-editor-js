@@ -1,7 +1,7 @@
 {
   "name": "react-editor-js",
-  "version": "0.1.0",
-  "description": "<WIP> The unofficial editor-js component for React",
+  "version": "0.2.0",
+  "description": "The unofficial editor-js component for React",
   "author": "Jungwoo An <o1o9814@naver.com>",
   "main": "./dist/react-editor-js.umd.js",
   "module": "./dist/react-editor-js.js",
@@ -13,6 +13,8 @@
   "devDependencies": {
     "@editorjs/editorjs": "^2.12.3",
     "@types/react": "^16.8.12",
+    "@typescript-eslint/eslint-plugin": "^1.6.0",
+    "@typescript-eslint/parser": "^1.6.0",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.16.0",
