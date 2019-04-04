@@ -11,6 +11,8 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@editorjs/editorjs": "^2.12.3",
+    "@types/react": "^16.8.12",
     "react": "^16.8.6",
     "rollup": "^1.8.0",
     "rollup-plugin-typescript2": "^0.20.1",
