@@ -1,0 +1,19 @@
+{
+  "name": "react-editor-js",
+  "version": "0.1.0",
+  "description": "<WIP> The unofficial editor-js component for React",
+  "author": "Jungwoo An <o1o9814@naver.com>",
+  "main": "./dist/react-editor-js.umd.js",
+  "module": "./dist/react-editor-js.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "rollup --config --environment NODE_ENV:production"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "react": "^16.8.6",
+    "rollup": "^1.8.0",
+    "rollup-plugin-typescript2": "^0.20.1",
+    "typescript": "^3.4.1"
+  }
+}
