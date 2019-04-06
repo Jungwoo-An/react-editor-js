@@ -4,7 +4,8 @@ import EditorJS from '@editorjs/editorjs'
 
 export interface EditorJsProps {
   enableReInitialize?: boolean
-  onBlocksChange?: (blocks: EditorJS.OutputData['blocks']) => void
+
+  instanceRef?: (instance: EditorJS) => void
 }
 
 export type Props = Readonly<EditorJS.EditorConfig> & Readonly<EditorJsProps>
@@ -34,9 +35,13 @@ class EditorJsContainer extends React.PureComponent<Props> {
     this.instance = new EditorJS({
       ...this.props,
 
-      holderId: 'editor-js',
-      onChange: this.handleChange
+      holderId: 'editor-js'
     })
+
+    const { instanceRef } = this.props
+    if (instanceRef) {
+      instanceRef(this.instance)
+    }
   }
 
   destroyEditor () {
@@ -46,18 +51,6 @@ class EditorJsContainer extends React.PureComponent<Props> {
 
     this.instance.destroy()
     this.instance = undefined
-  }
-
-  handleChange = async () => {
-    if (!this.instance) {
-      return
-    }
-
-    const { onBlocksChange } = this.props
-    if (onBlocksChange) {
-      const data = await this.instance.saver.save()
-      onBlocksChange(data.blocks)
-    }
   }
 
   render () {

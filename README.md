@@ -25,3 +25,21 @@ Allow all options of [editor-js](https://github.com/codex-team/editor.js/blob/ma
 | Name               | Type    | Description                                   |
 | ------------------ | ------- | --------------------------------------------- |
 | enableReInitialize | Boolean | editor-js rerendering when componentDidUpdate |
+
+### How to access editor-js instance?
+
+You can access using instanceRef
+
+```js
+async handleSave() {
+  await this.editorInstance.save();
+}
+
+componentDidMount() {
+  this.editorInstance // access editor-js
+}
+
+render() {
+  return <EditorJs instanceRef={instance => this.editorInstance = instance} data={data} />
+}
+```
