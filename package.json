@@ -1,8 +1,14 @@
 {
   "name": "react-editor-js",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "The unofficial editor-js component for React",
   "author": "Jungwoo An <o1o9814@naver.com>",
+  "keywords": [
+    "react",
+    "editor",
+    "editor.js",
+    "editorjs"
+  ],
   "main": "./dist/react-editor-js.umd.js",
   "module": "./dist/react-editor-js.js",
   "types": "./dist/index.d.ts",
@@ -10,6 +16,13 @@
     "build": "rollup --config --environment NODE_ENV:production"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jungwoo-An/react-editor-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jungwoo-An/react-editor-js/issues"
+  },
   "devDependencies": {
     "@editorjs/editorjs": "^2.12.3",
     "@types/react": "^16.8.12",
