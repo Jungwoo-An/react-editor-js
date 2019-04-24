@@ -23,6 +23,26 @@ export default {
       sourcemap: true
     }
   ],
-  external: ['react', '@editorjs/editorjs'],
+  external: [
+    'react',
+    '@editorjs/editorjs',
+    '@editorjs/checklist',
+    '@editorjs/code',
+    '@editorjs/delimiter',
+    '@editorjs/editorjs',
+    '@editorjs/embed',
+    '@editorjs/header',
+    '@editorjs/image',
+    '@editorjs/inline-code',
+    '@editorjs/link',
+    '@editorjs/list',
+    '@editorjs/marker',
+    '@editorjs/paragraph',
+    '@editorjs/quote',
+    '@editorjs/raw',
+    '@editorjs/simple-image',
+    '@editorjs/table',
+    '@editorjs/warning'
+  ],
   plugins
 }
