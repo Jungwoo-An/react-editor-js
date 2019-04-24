@@ -2,12 +2,15 @@
 
 The unofficial [editor-js](https://editorjs.io/) component for React
 
+DEMO: [CodeSandbox](https://codesandbox.io/s/7wr6jp2891)
+
 ## Getting Started
 
 ### Install via npm (or yarn)
 
 ```bash
-npm install --save-dev react-editor-js
+# editorjs and official plugins
+npm install --save-dev react-editor-js @editorjs/checklist @editorjs/code @editorjs/delimiter @editorjs/editorjs @editorjs/embed @editorjs/header @editorjs/image @editorjs/inline-code @editorjs/link @editorjs/list @editorjs/marker @editorjs/paragraph @editorjs/quote @editorjs/raw @editorjs/simple-image @editorjs/table @editorjs/warning
 ```
 
 ### Usage
