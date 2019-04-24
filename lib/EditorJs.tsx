@@ -2,6 +2,8 @@ import * as React from 'react'
 
 import EditorJS from '@editorjs/editorjs'
 
+import { EDITOR_JS_PLUGINS } from './constants'
+
 export interface EditorJsProps {
   enableReInitialize?: boolean
 
@@ -33,9 +35,10 @@ class EditorJsContainer extends React.PureComponent<Props> {
 
   initEditor () {
     this.instance = new EditorJS({
-      ...this.props,
+      tools: EDITOR_JS_PLUGINS,
+      holderId: 'editor-js',
 
-      holderId: 'editor-js'
+      ...this.props
     })
 
     const { instanceRef } = this.props

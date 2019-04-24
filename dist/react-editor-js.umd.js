@@ -1,10 +1,26 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('react'), require('@editorjs/editorjs')) :
-    typeof define === 'function' && define.amd ? define(['react', '@editorjs/editorjs'], factory) :
-    (global = global || self, global.LineChart = factory(global.React, global.EditorJS));
-}(this, function (React, EditorJS) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('react'), require('@editorjs/editorjs'), require('@editorjs/embed'), require('@editorjs/table'), require('@editorjs/paragraph'), require('@editorjs/list'), require('@editorjs/warning'), require('@editorjs/code'), require('@editorjs/link'), require('@editorjs/image'), require('@editorjs/raw'), require('@editorjs/header'), require('@editorjs/quote'), require('@editorjs/marker'), require('@editorjs/checklist'), require('@editorjs/delimiter'), require('@editorjs/inline-code'), require('@editorjs/simple-image')) :
+    typeof define === 'function' && define.amd ? define(['react', '@editorjs/editorjs', '@editorjs/embed', '@editorjs/table', '@editorjs/paragraph', '@editorjs/list', '@editorjs/warning', '@editorjs/code', '@editorjs/link', '@editorjs/image', '@editorjs/raw', '@editorjs/header', '@editorjs/quote', '@editorjs/marker', '@editorjs/checklist', '@editorjs/delimiter', '@editorjs/inline-code', '@editorjs/simple-image'], factory) :
+    (global = global || self, global.LineChart = factory(global.React, global.EditorJS, global.Embed, global.Table, global.Paragraph, global.List, global.Warning, global.Code, global.Link, global.Image, global.Raw, global.Header, global.Quote, global.Marker, global.CheckList, global.Delimiter, global.InlineCode, global.SimpleImage));
+}(this, function (React, EditorJS, Embed, Table, Paragraph, List, Warning, Code, Link, Image, Raw, Header, Quote, Marker, CheckList, Delimiter, InlineCode, SimpleImage) { 'use strict';
 
     EditorJS = EditorJS && EditorJS.hasOwnProperty('default') ? EditorJS['default'] : EditorJS;
+    Embed = Embed && Embed.hasOwnProperty('default') ? Embed['default'] : Embed;
+    Table = Table && Table.hasOwnProperty('default') ? Table['default'] : Table;
+    Paragraph = Paragraph && Paragraph.hasOwnProperty('default') ? Paragraph['default'] : Paragraph;
+    List = List && List.hasOwnProperty('default') ? List['default'] : List;
+    Warning = Warning && Warning.hasOwnProperty('default') ? Warning['default'] : Warning;
+    Code = Code && Code.hasOwnProperty('default') ? Code['default'] : Code;
+    Link = Link && Link.hasOwnProperty('default') ? Link['default'] : Link;
+    Image = Image && Image.hasOwnProperty('default') ? Image['default'] : Image;
+    Raw = Raw && Raw.hasOwnProperty('default') ? Raw['default'] : Raw;
+    Header = Header && Header.hasOwnProperty('default') ? Header['default'] : Header;
+    Quote = Quote && Quote.hasOwnProperty('default') ? Quote['default'] : Quote;
+    Marker = Marker && Marker.hasOwnProperty('default') ? Marker['default'] : Marker;
+    CheckList = CheckList && CheckList.hasOwnProperty('default') ? CheckList['default'] : CheckList;
+    Delimiter = Delimiter && Delimiter.hasOwnProperty('default') ? Delimiter['default'] : Delimiter;
+    InlineCode = InlineCode && InlineCode.hasOwnProperty('default') ? InlineCode['default'] : InlineCode;
+    SimpleImage = SimpleImage && SimpleImage.hasOwnProperty('default') ? SimpleImage['default'] : SimpleImage;
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -46,6 +62,25 @@
         return __assign.apply(this, arguments);
     };
 
+    var EDITOR_JS_PLUGINS = {
+        embed: Embed,
+        table: Table,
+        paragraph: Paragraph,
+        list: List,
+        warning: Warning,
+        code: Code,
+        link: Link,
+        image: Image,
+        raw: Raw,
+        header: Header,
+        quote: Quote,
+        marker: Marker,
+        checklist: CheckList,
+        delimiter: Delimiter,
+        inlineCode: InlineCode,
+        simpleImage: SimpleImage
+    };
+
     var EditorJsContainer = /** @class */ (function (_super) {
         __extends(EditorJsContainer, _super);
         function EditorJsContainer() {
@@ -66,7 +101,7 @@
             this.destroyEditor();
         };
         EditorJsContainer.prototype.initEditor = function () {
-            this.instance = new EditorJS(__assign({}, this.props, { holderId: 'editor-js' }));
+            this.instance = new EditorJS(__assign({ tools: EDITOR_JS_PLUGINS, holderId: 'editor-js' }, this.props));
             var instanceRef = this.props.instanceRef;
             if (instanceRef) {
                 instanceRef(this.instance);

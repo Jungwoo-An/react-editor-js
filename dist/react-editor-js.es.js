@@ -1,5 +1,21 @@
 import { createElement, PureComponent } from 'react';
 import EditorJS from '@editorjs/editorjs';
+import Embed from '@editorjs/embed';
+import Table from '@editorjs/table';
+import Paragraph from '@editorjs/paragraph';
+import List from '@editorjs/list';
+import Warning from '@editorjs/warning';
+import Code from '@editorjs/code';
+import Link from '@editorjs/link';
+import Image from '@editorjs/image';
+import Raw from '@editorjs/raw';
+import Header from '@editorjs/header';
+import Quote from '@editorjs/quote';
+import Marker from '@editorjs/marker';
+import CheckList from '@editorjs/checklist';
+import Delimiter from '@editorjs/delimiter';
+import InlineCode from '@editorjs/inline-code';
+import SimpleImage from '@editorjs/simple-image';
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
@@ -41,6 +57,25 @@ var __assign = function() {
     return __assign.apply(this, arguments);
 };
 
+var EDITOR_JS_PLUGINS = {
+    embed: Embed,
+    table: Table,
+    paragraph: Paragraph,
+    list: List,
+    warning: Warning,
+    code: Code,
+    link: Link,
+    image: Image,
+    raw: Raw,
+    header: Header,
+    quote: Quote,
+    marker: Marker,
+    checklist: CheckList,
+    delimiter: Delimiter,
+    inlineCode: InlineCode,
+    simpleImage: SimpleImage
+};
+
 var EditorJsContainer = /** @class */ (function (_super) {
     __extends(EditorJsContainer, _super);
     function EditorJsContainer() {
@@ -61,7 +96,7 @@ var EditorJsContainer = /** @class */ (function (_super) {
         this.destroyEditor();
     };
     EditorJsContainer.prototype.initEditor = function () {
-        this.instance = new EditorJS(__assign({}, this.props, { holderId: 'editor-js' }));
+        this.instance = new EditorJS(__assign({ tools: EDITOR_JS_PLUGINS, holderId: 'editor-js' }, this.props));
         var instanceRef = this.props.instanceRef;
         if (instanceRef) {
             instanceRef(this.instance);
