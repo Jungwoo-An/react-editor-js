@@ -36,7 +36,7 @@ class EditorJsContainer extends React.PureComponent<Props> {
   initEditor () {
     this.instance = new EditorJS({
       tools: EDITOR_JS_PLUGINS,
-      holderId: 'editor-js',
+      holder: 'editor-js',
 
       ...this.props
     })

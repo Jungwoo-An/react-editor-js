@@ -96,7 +96,7 @@ var EditorJsContainer = /** @class */ (function (_super) {
         this.destroyEditor();
     };
     EditorJsContainer.prototype.initEditor = function () {
-        this.instance = new EditorJS(__assign({ tools: EDITOR_JS_PLUGINS, holderId: 'editor-js' }, this.props));
+        this.instance = new EditorJS(__assign({ tools: EDITOR_JS_PLUGINS, holder: 'editor-js' }, this.props));
         var instanceRef = this.props.instanceRef;
         if (instanceRef) {
             instanceRef(this.instance);
