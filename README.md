@@ -29,13 +29,27 @@ Allow all options of [editor-js](https://github.com/codex-team/editor.js/blob/ma
 | ------------------ | ------- | --------------------------------------------- |
 | enableReInitialize | Boolean | editor-js rerendering when componentDidUpdate |
 
+### How do I use custom element?
+
+It's simpleeeee
+
+```js
+render() {
+  return (
+    <EditorJs holder="custom">
+      <div id="custom" />
+    </EditorJs>
+  );
+}
+```
+
 ### How to access editor-js instance?
 
 You can access using instanceRef
 
 ```js
 async handleSave() {
-  await this.editorInstance.save();
+  const savedData = await this.editorInstance.save();
 }
 
 componentDidMount() {

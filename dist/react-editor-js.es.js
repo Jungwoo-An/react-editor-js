@@ -57,6 +57,16 @@ var __assign = function() {
     return __assign.apply(this, arguments);
 };
 
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
+            t[p[i]] = s[p[i]];
+    return t;
+}
+
 var EDITOR_JS_PLUGINS = {
     embed: Embed,
     table: Table,
@@ -96,8 +106,8 @@ var EditorJsContainer = /** @class */ (function (_super) {
         this.destroyEditor();
     };
     EditorJsContainer.prototype.initEditor = function () {
-        this.instance = new EditorJS(__assign({ tools: EDITOR_JS_PLUGINS, holder: 'editor-js' }, this.props));
-        var instanceRef = this.props.instanceRef;
+        var _a = this.props, instanceRef = _a.instanceRef, children = _a.children, enableReInitialize = _a.enableReInitialize, props = __rest(_a, ["instanceRef", "children", "enableReInitialize"]);
+        this.instance = new EditorJS(__assign({ tools: EDITOR_JS_PLUGINS, holder: 'editor-js' }, props));
         if (instanceRef) {
             instanceRef(this.instance);
         }
@@ -110,7 +120,8 @@ var EditorJsContainer = /** @class */ (function (_super) {
         this.instance = undefined;
     };
     EditorJsContainer.prototype.render = function () {
-        return createElement("div", { id: "editor-js" });
+        var children = this.props.children;
+        return children || createElement("div", { id: "editor-js" });
     };
     return EditorJsContainer;
 }(PureComponent));

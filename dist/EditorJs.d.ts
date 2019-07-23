@@ -12,6 +12,6 @@ declare class EditorJsContainer extends React.PureComponent<Props> {
     componentWillUnmount(): void;
     initEditor(): void;
     destroyEditor(): void;
-    render(): JSX.Element;
+    render(): {};
 }
 export default EditorJsContainer;

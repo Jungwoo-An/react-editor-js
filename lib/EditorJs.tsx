@@ -34,14 +34,15 @@ class EditorJsContainer extends React.PureComponent<Props> {
   }
 
   initEditor () {
+    const { instanceRef, children, enableReInitialize, ...props } = this.props
+
     this.instance = new EditorJS({
       tools: EDITOR_JS_PLUGINS,
       holder: 'editor-js',
 
-      ...this.props
+      ...props
     })
 
-    const { instanceRef } = this.props
     if (instanceRef) {
       instanceRef(this.instance)
     }
@@ -57,7 +58,9 @@ class EditorJsContainer extends React.PureComponent<Props> {
   }
 
   render () {
-    return <div id="editor-js" />
+    const { children } = this.props
+
+    return children || <div id="editor-js" />
   }
 }
 
