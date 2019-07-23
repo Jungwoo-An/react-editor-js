@@ -1,5 +1,7 @@
 # react-editor-js
 
+[![npm version](https://badge.fury.io/js/react-editor-js.svg)](https://badge.fury.io/js/react-editor-js)
+
 The unofficial [editor-js](https://editorjs.io/) component for React
 
 DEMO: [CodeSandbox](https://codesandbox.io/s/7wr6jp2891)
