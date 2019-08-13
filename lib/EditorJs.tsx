@@ -6,6 +6,7 @@ import { EDITOR_JS_PLUGINS } from './constants'
 
 export interface EditorJsProps {
   enableReInitialize?: boolean
+  tools?: EditorJS.EditorConfig['tools'];
 
   instanceRef?: (instance: EditorJS) => void
 }
@@ -34,10 +35,15 @@ class EditorJsContainer extends React.PureComponent<Props> {
   }
 
   initEditor () {
-    const { instanceRef, children, enableReInitialize, ...props } = this.props
+    const { instanceRef, children, enableReInitialize, tools, ...props } = this.props
+    const extendTools = {
+      // default tools
+      ...EDITOR_JS_PLUGINS,
+      ...tools
+    }
 
     this.instance = new EditorJS({
-      tools: EDITOR_JS_PLUGINS,
+      tools: extendTools,
       holder: 'editor-js',
 
       ...props
