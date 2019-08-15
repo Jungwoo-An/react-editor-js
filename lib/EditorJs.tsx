@@ -55,12 +55,14 @@ class EditorJsContainer extends React.PureComponent<Props> {
   }
 
   destroyEditor () {
-    if (!this.instance) {
-      return
+    if (this.instance) {
+      this.instance.isReady.then(() => {
+        if (this.instance) {
+          this.instance.destroy()
+          this.instance = undefined
+        }
+      })
     }
-
-    this.instance.destroy()
-    this.instance = undefined
   }
 
   render () {
