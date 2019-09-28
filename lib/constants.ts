@@ -4,7 +4,7 @@ import Paragraph from '@editorjs/paragraph'
 import List from '@editorjs/list'
 import Warning from '@editorjs/warning'
 import Code from '@editorjs/code'
-import Link from '@editorjs/link'
+import LinkTool from '@editorjs/link'
 import Image from '@editorjs/image'
 import Raw from '@editorjs/raw'
 import Header from '@editorjs/header'
@@ -22,7 +22,7 @@ export const EDITOR_JS_PLUGINS = {
   list: List,
   warning: Warning,
   code: Code,
-  link: Link,
+  linkTool: LinkTool,
   image: Image,
   raw: Raw,
   header: Header,
