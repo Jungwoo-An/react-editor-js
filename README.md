@@ -6,11 +6,11 @@ The unofficial [editor-js](https://editorjs.io/) component for React
 
 DEMO: [CodeSandbox](https://codesandbox.io/s/react-editor-js-q8g0z)
 
-## Supported Official Plugin (default)
+## Supported Official Plugin
 
+- [x] Paragraph (default)
 - [x] Embed
 - [x] Table
-- [x] Paragraph
 - [x] List
 - [x] Warning
 - [x] Code
@@ -31,7 +31,7 @@ DEMO: [CodeSandbox](https://codesandbox.io/s/react-editor-js-q8g0z)
 
 ```bash
 # editorjs and official plugins
-npm install --save-dev react-editor-js @editorjs/checklist @editorjs/code @editorjs/delimiter @editorjs/editorjs @editorjs/embed @editorjs/header @editorjs/image @editorjs/inline-code @editorjs/link @editorjs/list @editorjs/marker @editorjs/paragraph @editorjs/quote @editorjs/raw @editorjs/simple-image @editorjs/table @editorjs/warning
+npm install --save-dev react-editor-js @editorjs/editorjs @editorjs/paragraph
 ```
 
 ### Usage
@@ -51,6 +51,72 @@ Allow all options of [editor-js](https://github.com/codex-team/editor.js/blob/ma
 | enableReInitialize | Boolean | editor-js rerendering when componentDidUpdate |
 
 ## FAQ
+
+### How can I install plugins?
+
+There is an only Paragraph block already included in Editor.js. Probably you want to use several Block Tools that should be installed and connected.
+
+To add more Block Tools, simply add them to your repo and pass them as `tools`-property to your editor:
+
+```
+npm install --save-dev @editorjs/checklist
+```
+
+```js
+import EditorJs from 'react-editor-js';
+import CheckList from '@editorjs/checklist';
+
+<EditorJs data={data} tools={{ checkList: CheckList }} />;
+```
+
+We recommend to create a `tools.js` file and export your tools as a constant. Here is an example using all of the default plugins:
+
+```
+import Embed from '@editorjs/embed'
+import Table from '@editorjs/table'
+import Paragraph from '@editorjs/paragraph'
+import List from '@editorjs/list'
+import Warning from '@editorjs/warning'
+import Code from '@editorjs/code'
+import LinkTool from '@editorjs/link'
+import Image from '@editorjs/image'
+import Raw from '@editorjs/raw'
+import Header from '@editorjs/header'
+import Quote from '@editorjs/quote'
+import Marker from '@editorjs/marker'
+import CheckList from '@editorjs/checklist'
+import Delimiter from '@editorjs/delimiter'
+import InlineCode from '@editorjs/inline-code'
+import SimpleImage from '@editorjs/simple-image'
+
+export const EDITOR_JS_TOOLS = {
+  embed: Embed,
+  table: Table,
+  paragraph: Paragraph,
+  list: List,
+  warning: Warning,
+  code: Code,
+  linkTool: LinkTool,
+  image: Image,
+  raw: Raw,
+  header: Header,
+  quote: Quote,
+  marker: Marker,
+  checklist: CheckList,
+  delimiter: Delimiter,
+  inlineCode: InlineCode,
+  simpleImage: SimpleImage
+}
+```
+
+```
+import EditorJs from 'react-editor-js';
+import { EDITOR_JS_TOOLS } from './tools'
+<EditorJs data={data} tools={EDITOR_JS_TOOLS} />;
+```
+
+
+You can read more about plugins/tools at [editor-js: Tools installation](https://editorjs.io/getting-started#tools-installation)
 
 ### How do I use custom element?
 

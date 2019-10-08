@@ -1,6 +1,5 @@
 import Embed from '@editorjs/embed'
 import Table from '@editorjs/table'
-import Paragraph from '@editorjs/paragraph'
 import List from '@editorjs/list'
 import Warning from '@editorjs/warning'
 import Code from '@editorjs/code'
@@ -18,7 +17,6 @@ import SimpleImage from '@editorjs/simple-image'
 export const EDITOR_JS_PLUGINS = {
   embed: Embed,
   table: Table,
-  paragraph: Paragraph,
   list: List,
   warning: Warning,
   code: Code,
