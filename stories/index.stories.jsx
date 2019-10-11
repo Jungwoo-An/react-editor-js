@@ -1,11 +1,13 @@
 import React from 'react'
 
 import { storiesOf } from '@storybook/react'
+import { EXAMPLE_TOOLS } from './constants'
 
 import EditorJs from '../dist/react-editor-js.es'
 
 storiesOf('EditorJs', module).add('Example', () => (
   <EditorJs
+    tools={EXAMPLE_TOOLS}
     data={{
       time: 1556098174501,
       blocks: [

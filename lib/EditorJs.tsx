@@ -1,8 +1,7 @@
 import * as React from 'react'
 
 import EditorJS from '@editorjs/editorjs'
-
-import { EDITOR_JS_PLUGINS } from './constants'
+import Paragraph from '@editorjs/paragraph'
 
 export interface EditorJsProps {
   enableReInitialize?: boolean
@@ -38,7 +37,7 @@ class EditorJsContainer extends React.PureComponent<Props> {
     const { instanceRef, children, enableReInitialize, tools, ...props } = this.props
     const extendTools = {
       // default tools
-      ...EDITOR_JS_PLUGINS,
+      paragraph: Paragraph,
       ...tools
     }
 
