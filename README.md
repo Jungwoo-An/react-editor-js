@@ -4,7 +4,7 @@
 
 The unofficial [editor-js](https://editorjs.io/) component for React
 
-DEMO: [CodeSandbox](https://codesandbox.io/s/react-editor-js-q8g0z)
+DEMO: [CodeSandbox](https://codesandbox.io/embed/react-editor-js-23opz)
 
 ## Supported Official Plugin
 
@@ -71,7 +71,8 @@ import CheckList from '@editorjs/checklist';
 
 We recommend to create a `tools.js` file and export your tools as a constant. Here is an example using all of the default plugins:
 
-```
+```ts
+// tools.js
 import Embed from '@editorjs/embed'
 import Table from '@editorjs/table'
 import Paragraph from '@editorjs/paragraph'
@@ -109,7 +110,7 @@ export const EDITOR_JS_TOOLS = {
 }
 ```
 
-```
+```tsx
 import EditorJs from 'react-editor-js';
 import { EDITOR_JS_TOOLS } from './tools'
 <EditorJs data={data} tools={EDITOR_JS_TOOLS} />;
