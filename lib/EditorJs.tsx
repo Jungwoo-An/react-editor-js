@@ -37,7 +37,10 @@ class EditorJsContainer extends React.PureComponent<Props> {
     const { instanceRef, children, enableReInitialize, tools, ...props } = this.props
     const extendTools = {
       // default tools
-      paragraph: Paragraph,
+      paragraph: {
+        class: Paragraph,
+        inlineToolbar: true
+      },
       ...tools
     }
 
