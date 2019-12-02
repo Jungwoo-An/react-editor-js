@@ -9,7 +9,7 @@ export default {
   output: [
     {
       file: `${FILENAME}.umd.js`,
-      name: 'LineChart',
+      name: 'ReactEditorJs',
       format: 'umd',
       sourcemap: true,
       globals: {
