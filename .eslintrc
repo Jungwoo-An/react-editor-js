@@ -1,5 +1,8 @@
 {
   "parser": "@typescript-eslint/parser",
-  "extends": "standard",
-  "plugins": ["@typescript-eslint/eslint-plugin"]
+  "extends": ["standard", "prettier"],
+  "plugins": ["@typescript-eslint/eslint-plugin"],
+  "rules": {
+    "no-unused-vars": 0
+  }
 }
