@@ -5,7 +5,7 @@ import Paragraph from '@editorjs/paragraph'
 
 export interface EditorJsProps {
   enableReInitialize?: boolean
-  tools?: EditorJS.EditorConfig['tools'];
+  tools?: EditorJS.EditorConfig['tools']
 
   instanceRef?: (instance: EditorJS) => void
 }
@@ -15,11 +15,11 @@ export type Props = Readonly<EditorJS.EditorConfig> & Readonly<EditorJsProps>
 class EditorJsContainer extends React.PureComponent<Props> {
   instance?: EditorJS
 
-  componentDidMount () {
+  componentDidMount() {
     this.initEditor()
   }
 
-  componentDidUpdate () {
+  componentDidUpdate() {
     const { enableReInitialize } = this.props
     if (!enableReInitialize) {
       return
@@ -29,12 +29,19 @@ class EditorJsContainer extends React.PureComponent<Props> {
     this.initEditor()
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     this.destroyEditor()
   }
 
-  initEditor () {
-    const { instanceRef, children, enableReInitialize, tools, ...props } = this.props
+  initEditor() {
+    const {
+      instanceRef,
+      children,
+      enableReInitialize,
+      tools,
+      ...props
+    } = this.props
+
     const extendTools = {
       // default tools
       paragraph: {
@@ -56,7 +63,7 @@ class EditorJsContainer extends React.PureComponent<Props> {
     }
   }
 
-  destroyEditor () {
+  destroyEditor() {
     if (this.instance) {
       this.instance.isReady.then(() => {
         if (this.instance) {
@@ -67,7 +74,7 @@ class EditorJsContainer extends React.PureComponent<Props> {
     }
   }
 
-  render () {
+  render() {
     const { children } = this.props
 
     return children || <div id="editor-js" />
