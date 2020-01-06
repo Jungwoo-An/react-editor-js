@@ -19,13 +19,14 @@ class EditorJsContainer extends React.PureComponent<Props> {
     this.initEditor()
   }
 
-  componentDidUpdate() {
+  async componentDidUpdate() {
     const { enableReInitialize } = this.props
     if (!enableReInitialize) {
       return
     }
 
-    this.destroyEditor()
+    await this.destroyEditor()
+
     this.initEditor()
   }
 
@@ -64,14 +65,23 @@ class EditorJsContainer extends React.PureComponent<Props> {
   }
 
   destroyEditor() {
-    if (this.instance) {
-      this.instance.isReady.then(() => {
-        if (this.instance) {
-          this.instance.destroy()
-          this.instance = undefined
-        }
-      })
-    }
+    return new Promise((resolve, reject) => {
+      if (!this.instance) {
+        resolve()
+        return
+      }
+
+      this.instance.isReady
+        .then(() => {
+          if (this.instance) {
+            this.instance.destroy()
+            this.instance = undefined
+          }
+
+          resolve()
+        })
+        .catch(reject)
+    })
   }
 
   render() {
