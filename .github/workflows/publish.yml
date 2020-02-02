@@ -8,7 +8,7 @@ on:
       - v*
 
 jobs:
-  build:
+  install:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -21,7 +21,27 @@ jobs:
           key: react-editor-js-${{ hashFiles('**/yarn.lock') }}
       - run: npm install -g yarn
       - run: yarn
+      - uses: actions/upload-artifact@v1
+        with:
+          name: node_modules
+          path: node_modules
+
+  build:
+    needs: install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - uses: actions/download-artifact@v1
+        with:
+          name: node_modules
       - run: yarn build
+      - uses: actions/upload-artifact@v1
+        with:
+          name: dist
+          path: dist
 
   publish:
     needs: build
@@ -32,8 +52,10 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-      - run: yarn
-      - run: yarn build
-      - run: npm publish
+      - uses: actions/download-artifact@v1
+        with:
+          name: dist
+      - run: npx semantic-release
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_ACCESS_TOKEN}}
+          NPM_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
