@@ -1,4 +1,4 @@
-name: Build and publish workflow
+name: release
 
 on:
   push:
