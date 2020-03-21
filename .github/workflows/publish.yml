@@ -1,9 +1,6 @@
 name: release
 
-on:
-  push:
-    branches:
-      - *
+on: [push]
 
 jobs:
   install:
