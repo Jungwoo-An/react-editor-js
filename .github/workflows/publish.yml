@@ -1,11 +1,9 @@
 name: release
 
-# on:
-#   push:
-#     branches:
-#       - master
-#     tags:
-#       - v*
+on:
+  push:
+    branches:
+      - *
 
 jobs:
   install:
