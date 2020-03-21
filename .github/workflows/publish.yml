@@ -1,11 +1,11 @@
 name: release
 
-on:
-  push:
-    branches:
-      - master
-    tags:
-      - v*
+# on:
+#   push:
+#     branches:
+#       - master
+#     tags:
+#       - v*
 
 jobs:
   install:
@@ -51,11 +51,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-          registry-url: https://registry.npmjs.org/
       - uses: actions/download-artifact@v1
         with:
           name: dist
-      - run: npx semantic-release
+      - run: npx semantic-release --dry-run
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_ACCESS_TOKEN}}
           NPM_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
