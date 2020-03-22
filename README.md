@@ -1,12 +1,18 @@
-# react-editor-js
+<div align="center">
+  <img alt="Logo" src="static/react-editor-js.png" width="400px">
+</div>
 
-[![npm version](https://badge.fury.io/js/react-editor-js.svg)](https://badge.fury.io/js/react-editor-js)
+<div align="center">
 
-The unofficial [editor-js](https://editorjs.io/) component for React
+[![npm version](https://badge.fury.io/js/react-editor-js.svg)](https://badge.fury.io/js/react-editor-js) ![NPM](https://img.shields.io/npm/l/react-editor-js) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Jungwoo-An/react-editor-js/release)
 
-DEMO: [CodeSandbox](https://codesandbox.io/embed/react-editor-js-23opz)
+</div>
 
-## Supported Official Plugin
+## 🍞 DEMO
+
+- [CodeSandbox](https://codesandbox.io/embed/react-editor-js-23opz)
+
+## 🍀 Supported Official Plugin
 
 - [x] Paragraph (default)
 - [x] Embed
@@ -25,7 +31,7 @@ DEMO: [CodeSandbox](https://codesandbox.io/embed/react-editor-js-23opz)
 - [x] InlineCode
 - [x] SimpleImage
 
-## Getting Started
+## 🤟🏻 Getting Started
 
 ### Install via npm (or yarn)
 
@@ -42,7 +48,7 @@ import EditorJs from 'react-editor-js';
 <EditorJs data={data} />;
 ```
 
-## API
+## 📙 API
 
 Allow all options of [editor-js](https://github.com/codex-team/editor.js/blob/master/types/configs/editor-config.d.ts)
 
@@ -50,7 +56,7 @@ Allow all options of [editor-js](https://github.com/codex-team/editor.js/blob/ma
 | ------------------ | ------- | --------------------------------------------- |
 | enableReInitialize | Boolean | editor-js rerendering when componentDidUpdate |
 
-## FAQ
+## 🧐 FAQ
 
 ### How can I install plugins?
 
