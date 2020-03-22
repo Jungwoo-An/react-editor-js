@@ -47,7 +47,7 @@ jobs:
       - uses: actions/download-artifact@v1
         with:
           name: dist
-      - run: npx semantic-release --dry-run
+      - run: npx semantic-release --extends
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_ACCESS_TOKEN}}
           NPM_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
