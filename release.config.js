@@ -1,5 +1,5 @@
 module.exports = {
-  branches: ['master', 'chore/github-actions'],
+  branches: ['master'],
   tagFormat: '${version}',
   plugins: [
     [
