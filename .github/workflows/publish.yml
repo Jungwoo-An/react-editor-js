@@ -16,6 +16,7 @@ jobs:
           key: react-editor-js-${{ hashFiles('**/yarn.lock') }}
       - run: npm install -g yarn
       - run: yarn
+      - run: chmod -R +x ./node_modules/.bin
       - uses: actions/upload-artifact@v1
         with:
           name: node_modules
