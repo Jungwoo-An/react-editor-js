@@ -44,6 +44,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
+      - uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: react-editor-js-${{ hashFiles('**/yarn.lock') }}
       - uses: actions/download-artifact@v1
         with:
           name: dist
