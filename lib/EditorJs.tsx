@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import EditorJS from '@editorjs/editorjs'
+import EditorJS, { OutputData } from '@editorjs/editorjs'
 import Paragraph from '@editorjs/paragraph'
 
 export interface EditorJsProps {
@@ -20,14 +20,12 @@ class EditorJsContainer extends React.PureComponent<Props> {
   }
 
   async componentDidUpdate() {
-    const { enableReInitialize } = this.props
-    if (!enableReInitialize) {
+    const { enableReInitialize, data } = this.props
+    if (!enableReInitialize || !data) {
       return
     }
 
-    await this.destroyEditor()
-
-    this.initEditor()
+    this.changeData(data);
   }
 
   componentWillUnmount() {
@@ -82,6 +80,19 @@ class EditorJsContainer extends React.PureComponent<Props> {
         })
         .catch(reject)
     })
+  }
+
+  changeData(data: OutputData) {
+    if (!this.instance) {
+      return;
+    }
+
+    this.instance?.isReady.then(() => {
+      this.instance!.clear();
+      this.instance!.render(data);
+    }).catch(() => {
+      // do nothing
+    });
   }
 
   render() {
