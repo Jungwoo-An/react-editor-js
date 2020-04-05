@@ -57,7 +57,7 @@ Allow all options of [editor-js](https://github.com/codex-team/editor.js/blob/ma
 
 | Name               | Type    | Description                                   |
 | ------------------ | ------- | --------------------------------------------- |
-| enableReInitialize | Boolean | editor-js rerendering when componentDidUpdate |
+| enableReInitialize | Boolean | Change editor-js data when componentDidUpdate |
 
 ## 🧐 FAQ
 
