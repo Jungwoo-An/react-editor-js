@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import EditorJS, { OutputData } from '@editorjs/editorjs'
+import EditorJS, { OutputData, BlockToolData, API } from '@editorjs/editorjs'
 import Paragraph from '@editorjs/paragraph'
 
 export interface EditorJsProps {
@@ -8,6 +8,12 @@ export interface EditorJsProps {
   tools?: EditorJS.EditorConfig['tools']
 
   instanceRef?: (instance: EditorJS) => void
+
+  onChange?: (api: API, data?: OutputData) => void
+  onCompareBlocks?: (
+    newBlocks: BlockToolData | undefined,
+    oldBlocks: BlockToolData | undefined
+  ) => boolean
 }
 
 export type Props = Readonly<EditorJS.EditorConfig> & Readonly<EditorJsProps>
@@ -32,12 +38,30 @@ class EditorJsContainer extends React.PureComponent<Props> {
     this.destroyEditor()
   }
 
+  handleChange = async (api: API) => {
+    const { onCompareBlocks, onChange, data } = this.props
+    if (!onChange) {
+      return
+    }
+
+    const newData = await this.instance!.save()
+    const isBlocksEqual =
+      onCompareBlocks && onCompareBlocks(newData.blocks, data?.blocks)
+
+    if (isBlocksEqual) {
+      return
+    }
+
+    onChange(api, newData)
+  }
+
   initEditor() {
     const {
       instanceRef,
       children,
       enableReInitialize,
       tools,
+      onChange,
       ...props
     } = this.props
 
@@ -45,16 +69,19 @@ class EditorJsContainer extends React.PureComponent<Props> {
       // default tools
       paragraph: {
         class: Paragraph,
-        inlineToolbar: true,
+        inlineToolbar: true
       },
-      ...tools,
+      ...tools
     }
 
     this.instance = new EditorJS({
       tools: extendTools,
       holder: 'editor-js',
 
-      ...props,
+      ...(onChange && {
+        onChange: this.handleChange
+      }),
+      ...props
     })
 
     if (instanceRef) {
