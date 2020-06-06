@@ -25,7 +25,7 @@ class EditorJsContainer extends React.PureComponent<Props> {
       return
     }
 
-    this.changeData(data);
+    this.changeData(data)
   }
 
   componentWillUnmount() {
@@ -45,16 +45,16 @@ class EditorJsContainer extends React.PureComponent<Props> {
       // default tools
       paragraph: {
         class: Paragraph,
-        inlineToolbar: true
+        inlineToolbar: true,
       },
-      ...tools
+      ...tools,
     }
 
     this.instance = new EditorJS({
       tools: extendTools,
       holder: 'editor-js',
 
-      ...props
+      ...props,
     })
 
     if (instanceRef) {
@@ -84,15 +84,17 @@ class EditorJsContainer extends React.PureComponent<Props> {
 
   changeData(data: OutputData) {
     if (!this.instance) {
-      return;
+      return
     }
 
-    this.instance?.isReady.then(() => {
-      this.instance!.clear();
-      this.instance!.render(data);
-    }).catch(() => {
-      // do nothing
-    });
+    this.instance?.isReady
+      .then(() => {
+        this.instance!.clear()
+        this.instance!.render(data)
+      })
+      .catch(() => {
+        // do nothing
+      })
   }
 
   render() {
