@@ -45,8 +45,7 @@ class EditorJsContainer extends React.PureComponent<Props> {
     }
 
     const newData = await this.instance!.save()
-    const isBlocksEqual =
-      onCompareBlocks && onCompareBlocks(newData.blocks, data?.blocks)
+    const isBlocksEqual = onCompareBlocks?.(newData.blocks, data?.blocks)
 
     if (isBlocksEqual) {
       return
