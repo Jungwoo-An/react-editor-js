@@ -11,7 +11,7 @@
     "@editorjs"
   ],
   "main": "./dist/react-editor-js.umd.js",
-  "module": "./dist/react-editor-js.js",
+  "module": "./dist/react-editor-js.es.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "rollup --config --environment NODE_ENV:production",
