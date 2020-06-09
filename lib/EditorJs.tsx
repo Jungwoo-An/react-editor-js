@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import EditorJS, { OutputData } from '@editorjs/editorjs'
+import EditorJS, { OutputData, BlockToolData, API } from '@editorjs/editorjs'
 import Paragraph from '@editorjs/paragraph'
 
 export interface EditorJsProps {
@@ -8,6 +8,12 @@ export interface EditorJsProps {
   tools?: EditorJS.EditorConfig['tools']
 
   instanceRef?: (instance: EditorJS) => void
+
+  onChange?: (api: API, data?: OutputData) => void
+  onCompareBlocks?: (
+    newBlocks: BlockToolData | undefined,
+    oldBlocks: BlockToolData | undefined
+  ) => boolean
 }
 
 export type Props = Readonly<EditorJS.EditorConfig> & Readonly<EditorJsProps>
@@ -25,11 +31,27 @@ class EditorJsContainer extends React.PureComponent<Props> {
       return
     }
 
-    this.changeData(data);
+    this.changeData(data)
   }
 
   componentWillUnmount() {
     this.destroyEditor()
+  }
+
+  handleChange = async (api: API) => {
+    const { onCompareBlocks, onChange, data } = this.props
+    if (!onChange) {
+      return
+    }
+
+    const newData = await this.instance!.save()
+    const isBlocksEqual = onCompareBlocks?.(newData.blocks, data?.blocks)
+
+    if (isBlocksEqual) {
+      return
+    }
+
+    onChange(api, newData)
   }
 
   initEditor() {
@@ -38,6 +60,7 @@ class EditorJsContainer extends React.PureComponent<Props> {
       children,
       enableReInitialize,
       tools,
+      onChange,
       ...props
     } = this.props
 
@@ -54,6 +77,9 @@ class EditorJsContainer extends React.PureComponent<Props> {
       tools: extendTools,
       holder: 'editor-js',
 
+      ...(onChange && {
+        onChange: this.handleChange
+      }),
       ...props
     })
 
@@ -84,15 +110,17 @@ class EditorJsContainer extends React.PureComponent<Props> {
 
   changeData(data: OutputData) {
     if (!this.instance) {
-      return;
+      return
     }
 
-    this.instance?.isReady.then(() => {
-      this.instance!.clear();
-      this.instance!.render(data);
-    }).catch(() => {
-      // do nothing
-    });
+    this.instance?.isReady
+      .then(() => {
+        this.instance!.clear()
+        this.instance!.render(data)
+      })
+      .catch(() => {
+        // do nothing
+      })
   }
 
   render() {

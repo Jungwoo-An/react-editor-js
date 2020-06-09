@@ -55,9 +55,11 @@ import EditorJs from 'react-editor-js';
 
 Allow all options of [editor-js](https://github.com/codex-team/editor.js/blob/master/types/configs/editor-config.d.ts)
 
-| Name               | Type    | Description                                   |
-| ------------------ | ------- | --------------------------------------------- |
-| enableReInitialize | Boolean | Change editor-js data when componentDidUpdate |
+| Name               | Type                                                                            | Description                                                        |
+| ------------------ | ------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| enableReInitialize | Boolean                                                                         | Change editor-js data when componentDidUpdate                      |
+| onChange           | (api: API, newData: OutputData) => void                                         | Fires when something changed in DOM                                |
+| onCompareBlocks    | (newBlocks?: OutputData['blocks'], oldBlocks?: OutputData['blocks']) => boolean | To avoid Infinite update when enableReInitialize used with onChange ([Recommended Library](https://github.com/FormidableLabs/react-fast-compare)) |
 
 ## 🧐 FAQ
 
