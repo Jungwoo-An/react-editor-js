@@ -162,6 +162,26 @@ render() {
 }
 ```
 
+### How to use instanceRef with React Hooks?
+
+#### Import useRef 
+``` import { useRef } from React ```
+
+``` const instanceRef = useRef(null); ```
+
+```
+<EditorJs tools={EDITOR_JS_TOOLS} instanceRef={(instance) => (instanceRef.current = instance)} />
+```
+
+#### Save Editor Data
+``` let data = await instanceRef.current.save();```
+
+#### Clear Editor
+``` instanceRef.current.clear(); ```
+
+#### Render Data inside the Editor
+``` instanceRef.current.render({ blocks }) ```
+
 ### Haven't received data from server (when use Link)
 
 You should set linkTool [config](https://github.com/editor-js/link#usage). 💪🏻
