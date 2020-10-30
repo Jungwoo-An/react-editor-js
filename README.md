@@ -167,13 +167,9 @@ render() {
 #### Import useRef 
 ``` js
 import { useRef } from React 
-```
 
-``` js
 const instanceRef = useRef(null); 
-```
 
-```js
 <EditorJs tools={EDITOR_JS_TOOLS} instanceRef={(instance) => (instanceRef.current = instance)} />
 ```
 
