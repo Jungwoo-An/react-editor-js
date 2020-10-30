@@ -166,7 +166,7 @@ render() {
 
 #### Import useRef 
 ``` js
-import { useRef } from React 
+import { useRef } from React;
 
 const instanceRef = useRef(null); 
 
