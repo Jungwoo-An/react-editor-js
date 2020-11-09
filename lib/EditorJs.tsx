@@ -20,7 +20,9 @@ export type Props = Readonly<EditorJS.EditorConfig> & Readonly<EditorJsProps>
 
 class EditorJsContainer extends React.PureComponent<Props> {
   instance?: EditorJS
-  holder: string
+  holder: string = `editor-js-${(
+    Math.floor(Math.random() * 1000) + Date.now()
+  ).toString(36)}`
 
   componentDidMount() {
     this.initEditor()
@@ -122,14 +124,6 @@ class EditorJsContainer extends React.PureComponent<Props> {
       .catch(() => {
         // do nothing
       })
-  }
-
-  constructor(props: EditorJsProps) {
-    super(props)
-
-    this.holder = `editor-js-${(
-      Math.floor(Math.random() * 1000) + Date.now()
-    ).toString(36)}`
   }
 
   render() {
