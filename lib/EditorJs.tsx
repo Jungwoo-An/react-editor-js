@@ -20,6 +20,9 @@ export type Props = Readonly<EditorJS.EditorConfig> & Readonly<EditorJsProps>
 
 class EditorJsContainer extends React.PureComponent<Props> {
   instance?: EditorJS
+  holder: string = `editor-js-${(
+    Math.floor(Math.random() * 1000) + Date.now()
+  ).toString(36)}`
 
   componentDidMount() {
     this.initEditor()
@@ -68,19 +71,19 @@ class EditorJsContainer extends React.PureComponent<Props> {
       // default tools
       paragraph: {
         class: Paragraph,
-        inlineToolbar: true
+        inlineToolbar: true,
       },
-      ...tools
+      ...tools,
     }
 
     this.instance = new EditorJS({
       tools: extendTools,
-      holder: 'editor-js',
+      holder: this.holder,
 
       ...(onChange && {
-        onChange: this.handleChange
+        onChange: this.handleChange,
       }),
-      ...props
+      ...props,
     })
 
     if (instanceRef) {
@@ -126,7 +129,7 @@ class EditorJsContainer extends React.PureComponent<Props> {
   render() {
     const { children } = this.props
 
-    return children || <div id="editor-js" />
+    return children || <div id={this.holder} />
   }
 }
 
