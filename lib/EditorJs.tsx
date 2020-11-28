@@ -20,6 +20,7 @@ export type Props = Readonly<EditorJS.EditorConfig> & Readonly<EditorJsProps>
 
 class EditorJsContainer extends React.PureComponent<Props> {
   instance?: EditorJS
+
   holder: string = `editor-js-${(
     Math.floor(Math.random() * 1000) + Date.now()
   ).toString(36)}`
