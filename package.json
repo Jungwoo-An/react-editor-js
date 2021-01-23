@@ -31,7 +31,7 @@
     "@editorjs/checklist": "^1.1.0",
     "@editorjs/code": "^2.4.1",
     "@editorjs/delimiter": "^1.1.0",
-    "@editorjs/editorjs": "^2.16.1",
+    "@editorjs/editorjs": "^2.19.1",
     "@editorjs/embed": "^2.2.0",
     "@editorjs/header": "^2.3.2",
     "@editorjs/image": "^2.3.3",
