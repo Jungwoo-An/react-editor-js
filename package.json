@@ -69,5 +69,9 @@
     "rollup": "^1.27.9",
     "rollup-plugin-typescript2": "^0.25.3",
     "typescript": "^3.7.3"
+  },
+  "peerDependencies": {
+    "@editorjs/editorjs": "*",
+    "@editorjs/paragraph": "*"
   }
 }
