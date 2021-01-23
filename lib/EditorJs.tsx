@@ -5,7 +5,6 @@ import Paragraph from '@editorjs/paragraph'
 
 export interface EditorJsProps {
   enableReInitialize?: boolean
-  tools?: EditorJS.EditorConfig['tools']
 
   instanceRef?: (instance: EditorJS) => void
 
@@ -29,8 +28,13 @@ class EditorJsContainer extends React.PureComponent<Props> {
     this.initEditor()
   }
 
-  async componentDidUpdate() {
-    const { enableReInitialize, data } = this.props
+  async componentDidUpdate({ readOnly: prevReadOnly }: Props) {
+    const { enableReInitialize, data, readOnly } = this.props
+    if (prevReadOnly !== readOnly) {
+      // Toggle readOnly mode
+      this.instance?.readOnly.toggle(readOnly)
+    }
+
     if (!enableReInitialize || !data) {
       return
     }
