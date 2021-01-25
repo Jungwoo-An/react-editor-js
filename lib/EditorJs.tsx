@@ -65,7 +65,9 @@ class EditorJsContainer extends React.PureComponent<Props> {
 
   handleReady = () => {
     const { onReady } = this.props
-    if (!onReady) return
+    if (!onReady) {
+      return
+    }
 
     onReady(this.instance)
   }
