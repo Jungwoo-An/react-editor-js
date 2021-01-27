@@ -60,6 +60,7 @@ Allow all options of [editor-js](https://github.com/codex-team/editor.js/blob/ma
 | enableReInitialize | Boolean                                                                         | Change editor-js data when componentDidUpdate                      |
 | onChange           | (api: API, newData: OutputData) => void                                         | Fires when something changed in DOM                                |
 | onCompareBlocks    | (newBlocks?: OutputData['blocks'], oldBlocks?: OutputData['blocks']) => boolean | Use to avoid Infinite update when enableReInitialize used with onChange ([Recommended Library](https://github.com/FormidableLabs/react-fast-compare)) |
+| onReady            | (instance?: EditorJS) => void                                                   | Use to execute callback when editor-js instance has initialized    |
 
 ## 🧐 FAQ
 

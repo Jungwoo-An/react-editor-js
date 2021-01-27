@@ -9,6 +9,7 @@ export interface EditorJsProps {
   instanceRef?: (instance: EditorJS) => void
 
   onChange?: (api: API, data?: OutputData) => void
+  onReady?: (instance?: EditorJS) => void,
   onCompareBlocks?: (
     newBlocks: BlockToolData | undefined,
     oldBlocks: BlockToolData | undefined
@@ -62,6 +63,15 @@ class EditorJsContainer extends React.PureComponent<Props> {
     onChange(api, newData)
   }
 
+  handleReady = () => {
+    const { onReady } = this.props
+    if (!onReady) {
+      return
+    }
+
+    onReady(this.instance)
+  }
+
   initEditor() {
     const {
       instanceRef,
@@ -69,6 +79,7 @@ class EditorJsContainer extends React.PureComponent<Props> {
       enableReInitialize,
       tools,
       onChange,
+      onReady,
       ...props
     } = this.props
 
@@ -84,6 +95,10 @@ class EditorJsContainer extends React.PureComponent<Props> {
     this.instance = new EditorJS({
       tools: extendTools,
       holder: this.holder,
+
+      ...(onReady && {
+        onReady: this.handleReady,
+      }),
 
       ...(onChange && {
         onChange: this.handleChange,
