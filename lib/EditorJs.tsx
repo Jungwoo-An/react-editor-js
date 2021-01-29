@@ -10,6 +10,7 @@ export interface EditorJsProps {
 
   onChange?: (api: API, data?: OutputData) => void
   onReady?: (instance?: EditorJS) => void,
+  onToggleReadOnly?: (readOnly?: boolean) => void,
   onCompareBlocks?: (
     newBlocks: BlockToolData | undefined,
     oldBlocks: BlockToolData | undefined
@@ -34,6 +35,10 @@ class EditorJsContainer extends React.PureComponent<Props> {
     if (prevReadOnly !== readOnly) {
       // Toggle readOnly mode
       this.instance?.readOnly.toggle(readOnly)
+      // @ts-ignore
+      this.instance!.configuration!.readOnly = readOnly
+
+      this.handleToggleReadOnly(readOnly)
     }
 
     if (!enableReInitialize || !data) {
@@ -48,8 +53,8 @@ class EditorJsContainer extends React.PureComponent<Props> {
   }
 
   handleChange = async (api: API) => {
-    const { onCompareBlocks, onChange, data } = this.props
-    if (!onChange) {
+    const { onCompareBlocks, onChange, data, readOnly } = this.props
+    if (!onChange || readOnly) {
       return
     }
 
@@ -70,6 +75,15 @@ class EditorJsContainer extends React.PureComponent<Props> {
     }
 
     onReady(this.instance)
+  }
+
+  handleToggleReadOnly = (readOnly?: boolean) => {
+    const { onToggleReadOnly } = this.props
+    if (!onToggleReadOnly) {
+      return
+    }
+
+    onToggleReadOnly(readOnly)
   }
 
   initEditor() {
@@ -112,7 +126,7 @@ class EditorJsContainer extends React.PureComponent<Props> {
   }
 
   destroyEditor() {
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
       if (!this.instance) {
         resolve()
         return
