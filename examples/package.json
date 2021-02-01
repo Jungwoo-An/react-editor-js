@@ -1,0 +1,28 @@
+{
+  "name": "react-editor-js-example",
+  "private": true,
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "dependencies": {
+    "@editorjs/checklist": "latest",
+    "@editorjs/code": "latest",
+    "@editorjs/delimiter": "latest",
+    "@editorjs/editorjs": "latest",
+    "@editorjs/embed": "latest",
+    "@editorjs/header": "latest",
+    "@editorjs/image": "latest",
+    "@editorjs/inline-code": "latest",
+    "@editorjs/link": "latest",
+    "@editorjs/list": "latest",
+    "@editorjs/marker": "latest",
+    "@editorjs/paragraph": "latest",
+    "@editorjs/quote": "latest",
+    "@editorjs/raw": "latest",
+    "@editorjs/simple-image": "latest",
+    "@editorjs/table": "latest",
+    "@editorjs/warning": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-editor-js": "latest"
+  }
+}
