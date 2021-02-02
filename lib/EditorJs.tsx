@@ -10,7 +10,6 @@ export interface EditorJsProps {
 
   onChange?: (api: API, data?: OutputData) => void
   onReady?: (instance?: EditorJS) => void,
-  onToggleReadOnly?: (readOnly?: boolean) => void,
   onCompareBlocks?: (
     newBlocks: BlockToolData | undefined,
     oldBlocks: BlockToolData | undefined
@@ -37,8 +36,6 @@ class EditorJsContainer extends React.PureComponent<Props> {
       this.instance?.readOnly.toggle(readOnly)
       // @ts-ignore
       this.instance!.configuration!.readOnly = readOnly
-
-      this.handleToggleReadOnly(readOnly)
     }
 
     if (!enableReInitialize || !data) {
@@ -75,15 +72,6 @@ class EditorJsContainer extends React.PureComponent<Props> {
     }
 
     onReady(this.instance)
-  }
-
-  handleToggleReadOnly = (readOnly?: boolean) => {
-    const { onToggleReadOnly } = this.props
-    if (!onToggleReadOnly) {
-      return
-    }
-
-    onToggleReadOnly(readOnly)
   }
 
   initEditor() {
