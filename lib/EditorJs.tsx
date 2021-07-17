@@ -9,7 +9,7 @@ export interface EditorJsProps {
   instanceRef?: (instance: EditorJS) => void
 
   onChange?: (api: API, data?: OutputData) => void
-  onReady?: (instance?: EditorJS) => void,
+  onReady?: (instance?: EditorJS) => void
   onCompareBlocks?: (
     newBlocks: BlockToolData | undefined,
     oldBlocks: BlockToolData | undefined
