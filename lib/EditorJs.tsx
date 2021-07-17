@@ -112,7 +112,7 @@ class EditorJsContainer extends React.PureComponent<Props> {
   }
 
   destroyEditor() {
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
       if (!this.instance) {
         resolve()
         return
