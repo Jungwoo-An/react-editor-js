@@ -119,7 +119,6 @@ const Template: ComponentStory<typeof ReactEditorJS> = (args) => <ReactEditorJS 
       }
     }
   ],
-  version: '2.12.4'
 }} {...args} />;
 
 export const Basic = Template.bind({});
