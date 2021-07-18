@@ -1,8 +1,10 @@
+import { nodeResolve } from '@rollup/plugin-node-resolve'
+
 import typescript from 'rollup-plugin-typescript2'
 
 const FILENAME = 'dist/react-editor-js'
 
-const plugins = [typescript()]
+const plugins = [nodeResolve(), typescript()]
 
 export default {
   input: 'lib/index.ts',
@@ -14,14 +16,14 @@ export default {
       sourcemap: true,
       globals: {
         react: 'React',
-        '@editorjs/editorjs': 'EditorJS'
-      }
+        '@editorjs/editorjs': 'EditorJS',
+      },
     },
     {
       file: `${FILENAME}.es.js`,
       format: 'es',
-      sourcemap: true
-    }
+      sourcemap: true,
+    },
   ],
   external: [
     'react',
@@ -42,7 +44,7 @@ export default {
     '@editorjs/raw',
     '@editorjs/simple-image',
     '@editorjs/table',
-    '@editorjs/warning'
+    '@editorjs/warning',
   ],
-  plugins
+  plugins,
 }
