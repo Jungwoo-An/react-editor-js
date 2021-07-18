@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import ReactEditorJS from '../lib/'
+import ReactEditorJS from '../lib'
 
 import { EXAMPLE_TOOLS } from './constants'
 
