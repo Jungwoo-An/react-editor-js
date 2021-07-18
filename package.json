@@ -16,7 +16,8 @@
   "scripts": {
     "build": "rollup --config --environment NODE_ENV:production",
     "build-storybook": "build-storybook",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6006",
+    "semantic-release": "semantic-release"
   },
   "license": "MIT",
   "repository": {
@@ -70,6 +71,7 @@
     "react-dom": "^17.0.2",
     "rollup": "^2.53.2",
     "rollup-plugin-typescript2": "^0.30.0",
+    "semantic-release": "^17.4.4",
     "typescript": "^4.3.5"
   },
   "peerDependencies": {
