@@ -46,6 +46,7 @@
     "@editorjs/simple-image": "^1.4.1",
     "@editorjs/table": "^1.3.0",
     "@editorjs/warning": "^1.2.0",
+    "@rollup/plugin-node-resolve": "^13.0.2",
     "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/git": "^9.0.0",
     "@semantic-release/github": "^7.2.3",
@@ -72,6 +73,7 @@
     "rollup": "^2.53.2",
     "rollup-plugin-typescript2": "^0.30.0",
     "semantic-release": "^17.4.4",
+    "tslib": "^2.3.0",
     "typescript": "^4.3.5"
   },
   "peerDependencies": {
