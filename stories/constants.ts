@@ -29,5 +29,5 @@ export const EXAMPLE_TOOLS = {
   checklist: CheckList,
   delimiter: Delimiter,
   inlineCode: InlineCode,
-  simpleImage: SimpleImage
+  simpleImage: SimpleImage,
 }

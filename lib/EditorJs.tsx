@@ -9,7 +9,7 @@ export interface EditorJsProps {
   instanceRef?: (instance: EditorJS) => void
 
   onChange?: (api: API, data?: OutputData) => void
-  onReady?: (instance?: EditorJS) => void,
+  onReady?: (instance?: EditorJS) => void
   onCompareBlocks?: (
     newBlocks: BlockToolData | undefined,
     oldBlocks: BlockToolData | undefined
@@ -112,7 +112,7 @@ class EditorJsContainer extends React.PureComponent<Props> {
   }
 
   destroyEditor() {
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
       if (!this.instance) {
         resolve()
         return
