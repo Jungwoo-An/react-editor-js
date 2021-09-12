@@ -9,7 +9,6 @@
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "noImplicitAny": true,
-    "baseUrl": "./",
-    "typeRoots": ["node_modules/@types", "@types"]
+    "baseUrl": "./"
   }
 }
