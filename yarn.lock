@@ -2752,6 +2752,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-editor-js/client@workspace:packages/client":
+  version: 0.0.0-use.local
+  resolution: "@react-editor-js/client@workspace:packages/client"
+  languageName: unknown
+  linkType: soft
+
+"@react-editor-js/server@workspace:packages/server":
+  version: 0.0.0-use.local
+  resolution: "@react-editor-js/server@workspace:packages/server"
+  languageName: unknown
+  linkType: soft
+
 "@rollup/plugin-node-resolve@npm:^13.0.2":
   version: 13.0.2
   resolution: "@rollup/plugin-node-resolve@npm:13.0.2"

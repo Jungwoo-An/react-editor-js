@@ -23,13 +23,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:."
       },
       {
+        "name": "@react-editor-js/client",
+        "reference": "workspace:packages/client"
+      },
+      {
         "name": "react-editor-js",
         "reference": "workspace:packages/react-editor-js"
+      },
+      {
+        "name": "@react-editor-js/server",
+        "reference": "workspace:packages/server"
       }
     ],
     "enableTopLevelFallback": true,
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
     "fallbackExclusionList": [
+      ["@react-editor-js/client", ["workspace:packages/client"]],
+      ["@react-editor-js/server", ["workspace:packages/server"]],
       ["react-editor-js", ["workspace:packages/react-editor-js"]],
       ["root-workspace-0b6124", ["workspace:."]]
     ],
@@ -5627,6 +5637,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "react"
           ],
           "linkType": "HARD",
+        }]
+      ]],
+      ["@react-editor-js/client", [
+        ["workspace:packages/client", {
+          "packageLocation": "./packages/client/",
+          "packageDependencies": [
+            ["@react-editor-js/client", "workspace:packages/client"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@react-editor-js/server", [
+        ["workspace:packages/server", {
+          "packageLocation": "./packages/server/",
+          "packageDependencies": [
+            ["@react-editor-js/server", "workspace:packages/server"]
+          ],
+          "linkType": "SOFT",
         }]
       ]],
       ["@rollup/plugin-node-resolve", [

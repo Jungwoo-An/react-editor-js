@@ -1,0 +1,5 @@
+{
+  "name": "@react-editor-js/server",
+  "version": "2.0.0",
+  "description": "The unofficial editor-js component for React on server"
+}
