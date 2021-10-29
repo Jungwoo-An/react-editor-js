@@ -43,6 +43,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@editorjs/paragraph@npm:*":
+  version: 2.8.0
+  resolution: "@editorjs/paragraph@npm:2.8.0"
+  checksum: 5f782bddea2725b7f36237de90cce0584fa13996c37d05bfec54aca75b5b4ec3c1022b2daa971a23c54fc2dc4d6a931159f80afa27c6099c10450aafc836c93b
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -381,6 +388,17 @@ __metadata:
 "@react-editor-js/client@workspace:packages/client":
   version: 0.0.0-use.local
   resolution: "@react-editor-js/client@workspace:packages/client"
+  dependencies:
+    "@editorjs/editorjs": "*"
+    "@editorjs/paragraph": "*"
+    "@react-editor-js/core": "workspace:packages/core"
+    "@types/react": "*"
+    react: "*"
+  peerDependencies:
+    "@editorjs/editorjs": "*"
+    "@editorjs/paragraph": "*"
+    "@react-editor-js/core": "*"
+    react: "*"
   languageName: unknown
   linkType: soft
 
@@ -541,10 +559,35 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/prop-types@npm:*":
+  version: 15.7.4
+  resolution: "@types/prop-types@npm:15.7.4"
+  checksum: ef15c425a944f6b13824a87854cccf238e1b4cd0350b3124f4938406fe758fbdd6fadb2480d1388a00daeab61ce9888be5ca2b73da275f5dbc977143ff98e1eb
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:*":
+  version: 17.0.33
+  resolution: "@types/react@npm:17.0.33"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: ca343662dd2c1b323b5fa4f269334c786839a93b31a878d7a8a090be3a1ae65a7bd90992d0ebfb3aeb6e326d25c319cf4ae44fa7858dfbb8d953b099a91e59bd
+  languageName: node
+  linkType: hard
+
 "@types/retry@npm:^0.12.0":
   version: 0.12.1
   resolution: "@types/retry@npm:0.12.1"
   checksum: 476db201ed86e39c7ccadebf840d2a5190231fb9baedac6f6e688da9c1ceb9bf62f22a63819a38494c72f5ccfadfe8a988df2a79254a02b61ab7f739b57513e1
+  languageName: node
+  linkType: hard
+
+"@types/scheduler@npm:*":
+  version: 0.16.2
+  resolution: "@types/scheduler@npm:0.16.2"
+  checksum: e78d1bb50ca9321a76826c0f5a5ed7f1b6e995597127993cad658bd18d7f7de4324cd7efdfd0140079ee212a05774bbbd95eecfdf72370d14023acb99b841a30
   languageName: node
   linkType: hard
 
@@ -1251,6 +1294,13 @@ __metadata:
   version: 2.0.0
   resolution: "crypto-random-string@npm:2.0.0"
   checksum: 7bc19f6cafe3194a434198c9414941cc36d874e1f85b6fcba573b5623f77a440c0a10a94c0d0da26d7d23d85b6fe07354e589ef1a0fe2d7b32e0bab9e70ca4c1
+  languageName: node
+  linkType: hard
+
+"csstype@npm:^3.0.2":
+  version: 3.0.9
+  resolution: "csstype@npm:3.0.9"
+  checksum: e5d6ebc4581d09537e620b78b6741b4b1ececc0eb3fec065be1d59d42685954276847969b9c3652e835553a33dd8a7995bbd5cc834c4142375de8b417a433880
   languageName: node
   linkType: hard
 

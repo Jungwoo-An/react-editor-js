@@ -39,7 +39,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
     "fallbackExclusionList": [
       ["@react-editor-js/client", ["workspace:packages/client"]],
-      ["@react-editor-js/core", ["workspace:packages/core"]],
+      ["@react-editor-js/core", ["virtual:dc0631d8412ff872a22a571f33b428db3dbf4750a199dfd9b2d56c015bb682da768dcb1b0c0a966daef410b86ba3aa6f1fd9f9b61a2384ecff07fb78d869b2b4#workspace:packages/core", "workspace:packages/core"]],
       ["@react-editor-js/server", ["workspace:packages/server"]],
       ["root-workspace-0b6124", ["workspace:."]]
     ],
@@ -104,6 +104,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["codex-notifier", "npm:1.1.2"],
             ["codex-tooltip", "npm:1.0.2"],
             ["nanoid", "npm:3.1.30"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@editorjs/paragraph", [
+        ["npm:2.8.0", {
+          "packageLocation": "./.yarn/cache/@editorjs-paragraph-npm-2.8.0-e766ee609a-5f782bddea.zip/node_modules/@editorjs/paragraph/",
+          "packageDependencies": [
+            ["@editorjs/paragraph", "npm:2.8.0"]
           ],
           "linkType": "HARD",
         }]
@@ -511,12 +520,34 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ["workspace:packages/client", {
           "packageLocation": "./packages/client/",
           "packageDependencies": [
-            ["@react-editor-js/client", "workspace:packages/client"]
+            ["@react-editor-js/client", "workspace:packages/client"],
+            ["@editorjs/editorjs", "npm:2.22.3"],
+            ["@editorjs/paragraph", "npm:2.8.0"],
+            ["@react-editor-js/core", "virtual:dc0631d8412ff872a22a571f33b428db3dbf4750a199dfd9b2d56c015bb682da768dcb1b0c0a966daef410b86ba3aa6f1fd9f9b61a2384ecff07fb78d869b2b4#workspace:packages/core"],
+            ["@types/react", "npm:17.0.33"],
+            ["react", "npm:17.0.2"]
           ],
           "linkType": "SOFT",
         }]
       ]],
       ["@react-editor-js/core", [
+        ["virtual:dc0631d8412ff872a22a571f33b428db3dbf4750a199dfd9b2d56c015bb682da768dcb1b0c0a966daef410b86ba3aa6f1fd9f9b61a2384ecff07fb78d869b2b4#workspace:packages/core", {
+          "packageLocation": "./.yarn/$$virtual/@react-editor-js-core-virtual-2e424de8a0/1/packages/core/",
+          "packageDependencies": [
+            ["@react-editor-js/core", "virtual:dc0631d8412ff872a22a571f33b428db3dbf4750a199dfd9b2d56c015bb682da768dcb1b0c0a966daef410b86ba3aa6f1fd9f9b61a2384ecff07fb78d869b2b4#workspace:packages/core"],
+            ["@editorjs/editorjs", "npm:2.22.3"],
+            ["@types/editorjs__editorjs", null],
+            ["@types/react", "npm:17.0.33"],
+            ["react", "npm:17.0.2"]
+          ],
+          "packagePeers": [
+            "@editorjs/editorjs",
+            "@types/editorjs__editorjs",
+            "@types/react",
+            "react"
+          ],
+          "linkType": "SOFT",
+        }],
         ["workspace:packages/core", {
           "packageLocation": "./packages/core/",
           "packageDependencies": [
@@ -745,11 +776,41 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@types/prop-types", [
+        ["npm:15.7.4", {
+          "packageLocation": "./.yarn/cache/@types-prop-types-npm-15.7.4-592896a9fe-ef15c425a9.zip/node_modules/@types/prop-types/",
+          "packageDependencies": [
+            ["@types/prop-types", "npm:15.7.4"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/react", [
+        ["npm:17.0.33", {
+          "packageLocation": "./.yarn/cache/@types-react-npm-17.0.33-27bb07477e-ca343662dd.zip/node_modules/@types/react/",
+          "packageDependencies": [
+            ["@types/react", "npm:17.0.33"],
+            ["@types/prop-types", "npm:15.7.4"],
+            ["@types/scheduler", "npm:0.16.2"],
+            ["csstype", "npm:3.0.9"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@types/retry", [
         ["npm:0.12.1", {
           "packageLocation": "./.yarn/cache/@types-retry-npm-0.12.1-05f3303aac-476db201ed.zip/node_modules/@types/retry/",
           "packageDependencies": [
             ["@types/retry", "npm:0.12.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/scheduler", [
+        ["npm:0.16.2", {
+          "packageLocation": "./.yarn/cache/@types-scheduler-npm-0.16.2-ba3a7d8c68-e78d1bb50c.zip/node_modules/@types/scheduler/",
+          "packageDependencies": [
+            ["@types/scheduler", "npm:0.16.2"]
           ],
           "linkType": "HARD",
         }]
@@ -1550,6 +1611,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/crypto-random-string-npm-2.0.0-8ab47992ef-7bc19f6caf.zip/node_modules/crypto-random-string/",
           "packageDependencies": [
             ["crypto-random-string", "npm:2.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["csstype", [
+        ["npm:3.0.9", {
+          "packageLocation": "./.yarn/cache/csstype-npm-3.0.9-0801c4a6d7-e5d6ebc458.zip/node_modules/csstype/",
+          "packageDependencies": [
+            ["csstype", "npm:3.0.9"]
           ],
           "linkType": "HARD",
         }]
