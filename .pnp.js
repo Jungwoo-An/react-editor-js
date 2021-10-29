@@ -27,6 +27,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/client"
       },
       {
+        "name": "@react-editor-js/core",
+        "reference": "workspace:packages/core"
+      },
+      {
         "name": "@react-editor-js/server",
         "reference": "workspace:packages/server"
       }
@@ -35,6 +39,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
     "fallbackExclusionList": [
       ["@react-editor-js/client", ["workspace:packages/client"]],
+      ["@react-editor-js/core", ["workspace:packages/core"]],
       ["@react-editor-js/server", ["workspace:packages/server"]],
       ["root-workspace-0b6124", ["workspace:."]]
     ],
@@ -495,6 +500,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/client/",
           "packageDependencies": [
             ["@react-editor-js/client", "workspace:packages/client"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@react-editor-js/core", [
+        ["workspace:packages/core", {
+          "packageLocation": "./packages/core/",
+          "packageDependencies": [
+            ["@react-editor-js/core", "workspace:packages/core"]
           ],
           "linkType": "SOFT",
         }]

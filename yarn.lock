@@ -373,6 +373,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@react-editor-js/core@workspace:packages/core":
+  version: 0.0.0-use.local
+  resolution: "@react-editor-js/core@workspace:packages/core"
+  languageName: unknown
+  linkType: soft
+
 "@react-editor-js/server@workspace:packages/server":
   version: 0.0.0-use.local
   resolution: "@react-editor-js/server@workspace:packages/server"
