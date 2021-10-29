@@ -1,0 +1,13 @@
+{
+  "name": "react-editor-js",
+  "version": "2.0.0",
+  "description": "The unofficial editor-js component for React",
+  "peerDependencies": {
+    "@react-editor-js/client": "*",
+    "@react-editor-js/server": "*"
+  },
+  "devDependencies": {
+    "@react-editor-js/client": "*",
+    "@react-editor-js/server": "*"
+  }
+}

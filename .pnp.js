@@ -31,6 +31,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/core"
       },
       {
+        "name": "react-editor-js",
+        "reference": "workspace:packages/react-editor-js"
+      },
+      {
         "name": "@react-editor-js/server",
         "reference": "workspace:packages/server"
       }
@@ -38,9 +42,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "enableTopLevelFallback": true,
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
     "fallbackExclusionList": [
-      ["@react-editor-js/client", ["workspace:packages/client"]],
+      ["@react-editor-js/client", ["virtual:4a6625c4b2e390f05712a53905d07a9bb31b321796835eac85dafc36cc372e8609559744fc2166d75ef6a59670220f76b4fc0dcb1521667fcb6f6758e80f8494#workspace:packages/client", "workspace:packages/client"]],
       ["@react-editor-js/core", ["virtual:dc0631d8412ff872a22a571f33b428db3dbf4750a199dfd9b2d56c015bb682da768dcb1b0c0a966daef410b86ba3aa6f1fd9f9b61a2384ecff07fb78d869b2b4#workspace:packages/core", "workspace:packages/core"]],
-      ["@react-editor-js/server", ["workspace:packages/server"]],
+      ["@react-editor-js/server", ["virtual:4a6625c4b2e390f05712a53905d07a9bb31b321796835eac85dafc36cc372e8609559744fc2166d75ef6a59670220f76b4fc0dcb1521667fcb6f6758e80f8494#workspace:packages/server", "workspace:packages/server"]],
+      ["react-editor-js", ["workspace:packages/react-editor-js"]],
       ["root-workspace-0b6124", ["workspace:."]]
     ],
     "fallbackPool": [
@@ -517,6 +522,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@react-editor-js/client", [
+        ["virtual:4a6625c4b2e390f05712a53905d07a9bb31b321796835eac85dafc36cc372e8609559744fc2166d75ef6a59670220f76b4fc0dcb1521667fcb6f6758e80f8494#workspace:packages/client", {
+          "packageLocation": "./.yarn/$$virtual/@react-editor-js-client-virtual-54f60ad8ee/1/packages/client/",
+          "packageDependencies": [
+            ["@react-editor-js/client", "virtual:4a6625c4b2e390f05712a53905d07a9bb31b321796835eac85dafc36cc372e8609559744fc2166d75ef6a59670220f76b4fc0dcb1521667fcb6f6758e80f8494#workspace:packages/client"],
+            ["@editorjs/editorjs", "npm:2.22.3"],
+            ["@editorjs/paragraph", "npm:2.8.0"],
+            ["@react-editor-js/core", "virtual:dc0631d8412ff872a22a571f33b428db3dbf4750a199dfd9b2d56c015bb682da768dcb1b0c0a966daef410b86ba3aa6f1fd9f9b61a2384ecff07fb78d869b2b4#workspace:packages/core"],
+            ["@types/editorjs__editorjs", null],
+            ["@types/editorjs__paragraph", null],
+            ["@types/react", "npm:17.0.33"],
+            ["@types/react-editor-js__core", null],
+            ["react", "npm:17.0.2"]
+          ],
+          "packagePeers": [
+            "@types/editorjs__editorjs",
+            "@types/editorjs__paragraph",
+            "@types/react-editor-js__core"
+          ],
+          "linkType": "SOFT",
+        }],
         ["workspace:packages/client", {
           "packageLocation": "./packages/client/",
           "packageDependencies": [
@@ -559,6 +584,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@react-editor-js/server", [
+        ["virtual:4a6625c4b2e390f05712a53905d07a9bb31b321796835eac85dafc36cc372e8609559744fc2166d75ef6a59670220f76b4fc0dcb1521667fcb6f6758e80f8494#workspace:packages/server", {
+          "packageLocation": "./.yarn/$$virtual/@react-editor-js-server-virtual-093185ce5d/1/packages/server/",
+          "packageDependencies": [
+            ["@react-editor-js/server", "virtual:4a6625c4b2e390f05712a53905d07a9bb31b321796835eac85dafc36cc372e8609559744fc2166d75ef6a59670220f76b4fc0dcb1521667fcb6f6758e80f8494#workspace:packages/server"],
+            ["@react-editor-js/core", "virtual:dc0631d8412ff872a22a571f33b428db3dbf4750a199dfd9b2d56c015bb682da768dcb1b0c0a966daef410b86ba3aa6f1fd9f9b61a2384ecff07fb78d869b2b4#workspace:packages/core"],
+            ["@types/react", "npm:17.0.33"],
+            ["@types/react-editor-js__core", null],
+            ["react", "npm:17.0.2"]
+          ],
+          "packagePeers": [
+            "@types/react-editor-js__core"
+          ],
+          "linkType": "SOFT",
+        }],
         ["workspace:packages/server", {
           "packageLocation": "./packages/server/",
           "packageDependencies": [
@@ -4423,6 +4462,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["object-assign", "npm:4.1.1"]
           ],
           "linkType": "HARD",
+        }]
+      ]],
+      ["react-editor-js", [
+        ["workspace:packages/react-editor-js", {
+          "packageLocation": "./packages/react-editor-js/",
+          "packageDependencies": [
+            ["react-editor-js", "workspace:packages/react-editor-js"],
+            ["@react-editor-js/client", "virtual:4a6625c4b2e390f05712a53905d07a9bb31b321796835eac85dafc36cc372e8609559744fc2166d75ef6a59670220f76b4fc0dcb1521667fcb6f6758e80f8494#workspace:packages/client"],
+            ["@react-editor-js/server", "virtual:4a6625c4b2e390f05712a53905d07a9bb31b321796835eac85dafc36cc372e8609559744fc2166d75ef6a59670220f76b4fc0dcb1521667fcb6f6758e80f8494#workspace:packages/server"]
+          ],
+          "linkType": "SOFT",
         }]
       ]],
       ["read", [

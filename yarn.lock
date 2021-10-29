@@ -385,7 +385,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-editor-js/client@workspace:packages/client":
+"@react-editor-js/client@*, @react-editor-js/client@workspace:packages/client":
   version: 0.0.0-use.local
   resolution: "@react-editor-js/client@workspace:packages/client"
   dependencies:
@@ -414,7 +414,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-editor-js/server@workspace:packages/server":
+"@react-editor-js/server@*, @react-editor-js/server@workspace:packages/server":
   version: 0.0.0-use.local
   resolution: "@react-editor-js/server@workspace:packages/server"
   dependencies:
@@ -3749,6 +3749,18 @@ __metadata:
   checksum: ea2b7f7cee201a67923a2240de594a5d9b59bd312b814b06536d3d609a416dfd6fb9b85ea2abfd3b8a4eb5ed33eaff946ee75a8f2b7fb10941073c5cfee6b7a5
   languageName: node
   linkType: hard
+
+"react-editor-js@workspace:packages/react-editor-js":
+  version: 0.0.0-use.local
+  resolution: "react-editor-js@workspace:packages/react-editor-js"
+  dependencies:
+    "@react-editor-js/client": "*"
+    "@react-editor-js/server": "*"
+  peerDependencies:
+    "@react-editor-js/client": "*"
+    "@react-editor-js/server": "*"
+  languageName: unknown
+  linkType: soft
 
 "react@npm:*":
   version: 17.0.2
