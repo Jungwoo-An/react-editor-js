@@ -7,7 +7,7 @@
     "@react-editor-js/server": "*"
   },
   "devDependencies": {
-    "@react-editor-js/client": "*",
-    "@react-editor-js/server": "*"
+    "@react-editor-js/client": "workspace:packages/@react-editor-js/client",
+    "@react-editor-js/server": "workspace:packages/@react-editor-js/server"
   }
 }

@@ -385,13 +385,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-editor-js/client@*, @react-editor-js/client@workspace:packages/client":
+"@react-editor-js/client@workspace:packages/@react-editor-js/client":
   version: 0.0.0-use.local
-  resolution: "@react-editor-js/client@workspace:packages/client"
+  resolution: "@react-editor-js/client@workspace:packages/@react-editor-js/client"
   dependencies:
     "@editorjs/editorjs": "*"
     "@editorjs/paragraph": "*"
-    "@react-editor-js/core": "workspace:packages/core"
+    "@react-editor-js/core": "workspace:packages/@react-editor-js/core"
     "@types/react": "*"
     react: "*"
   peerDependencies:
@@ -402,9 +402,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-editor-js/core@workspace:packages/core":
+"@react-editor-js/core@workspace:packages/@react-editor-js/core":
   version: 0.0.0-use.local
-  resolution: "@react-editor-js/core@workspace:packages/core"
+  resolution: "@react-editor-js/core@workspace:packages/@react-editor-js/core"
   dependencies:
     "@editorjs/editorjs": "*"
     react: "*"
@@ -414,11 +414,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-editor-js/server@*, @react-editor-js/server@workspace:packages/server":
+"@react-editor-js/server@workspace:packages/@react-editor-js/server":
   version: 0.0.0-use.local
-  resolution: "@react-editor-js/server@workspace:packages/server"
+  resolution: "@react-editor-js/server@workspace:packages/@react-editor-js/server"
   dependencies:
-    "@react-editor-js/core": "workspace:packages/core"
+    "@react-editor-js/core": "workspace:packages/@react-editor-js/core"
     "@types/react": "*"
     react: "*"
   peerDependencies:
@@ -3754,8 +3754,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "react-editor-js@workspace:packages/react-editor-js"
   dependencies:
-    "@react-editor-js/client": "*"
-    "@react-editor-js/server": "*"
+    "@react-editor-js/client": "workspace:packages/@react-editor-js/client"
+    "@react-editor-js/server": "workspace:packages/@react-editor-js/server"
   peerDependencies:
     "@react-editor-js/client": "*"
     "@react-editor-js/server": "*"

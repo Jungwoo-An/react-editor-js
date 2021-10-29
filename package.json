@@ -5,7 +5,8 @@
     "semantic-release": "semantic-release"
   },
   "workspaces": [
-    "packages/*"
+    "packages/@react-editor-js/*",
+    "packages/react-editor-js"
   ],
   "repository": {
     "type": "git",

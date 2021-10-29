@@ -9,7 +9,7 @@
     "react": "*"
   },
   "dependencies": {
-    "@react-editor-js/core": "workspace:packages/core"
+    "@react-editor-js/core": "workspace:packages/@react-editor-js/core"
   },
   "devDependencies": {
     "@editorjs/editorjs": "*",
