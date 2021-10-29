@@ -96,6 +96,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@editorjs/editorjs", [
+        ["npm:2.22.3", {
+          "packageLocation": "./.yarn/cache/@editorjs-editorjs-npm-2.22.3-259e0757a0-a4232ea907.zip/node_modules/@editorjs/editorjs/",
+          "packageDependencies": [
+            ["@editorjs/editorjs", "npm:2.22.3"],
+            ["codex-notifier", "npm:1.1.2"],
+            ["codex-tooltip", "npm:1.0.2"],
+            ["nanoid", "npm:3.1.30"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@nodelib/fs.scandir", [
         ["npm:2.1.5", {
           "packageLocation": "./.yarn/cache/@nodelib-fs.scandir-npm-2.1.5-89c67370dd-91b3de88d9.zip/node_modules/@nodelib/fs.scandir/",
@@ -508,7 +520,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ["workspace:packages/core", {
           "packageLocation": "./packages/core/",
           "packageDependencies": [
-            ["@react-editor-js/core", "workspace:packages/core"]
+            ["@react-editor-js/core", "workspace:packages/core"],
+            ["@editorjs/editorjs", "npm:2.22.3"],
+            ["react", "npm:17.0.2"]
           ],
           "linkType": "SOFT",
         }]
@@ -1296,6 +1310,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/code-point-at-npm-1.1.0-37de5fe566-7d9837296e.zip/node_modules/code-point-at/",
           "packageDependencies": [
             ["code-point-at", "npm:1.1.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["codex-notifier", [
+        ["npm:1.1.2", {
+          "packageLocation": "./.yarn/cache/codex-notifier-npm-1.1.2-893faf9b49-8c75f9d6a0.zip/node_modules/codex-notifier/",
+          "packageDependencies": [
+            ["codex-notifier", "npm:1.1.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["codex-tooltip", [
+        ["npm:1.0.2", {
+          "packageLocation": "./.yarn/cache/codex-tooltip-npm-1.0.2-865757378a-1abe98c11b.zip/node_modules/codex-tooltip/",
+          "packageDependencies": [
+            ["codex-tooltip", "npm:1.0.2"]
           ],
           "linkType": "HARD",
         }]
@@ -3109,6 +3141,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["loose-envify", [
+        ["npm:1.4.0", {
+          "packageLocation": "./.yarn/cache/loose-envify-npm-1.4.0-6307b72ccf-5c3b47bbe5.zip/node_modules/loose-envify/",
+          "packageDependencies": [
+            ["loose-envify", "npm:1.4.0"],
+            ["js-tokens", "npm:4.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["lru-cache", [
         ["npm:6.0.0", {
           "packageLocation": "./.yarn/cache/lru-cache-npm-6.0.0-b4c8668fe1-b8b78353d2.zip/node_modules/lru-cache/",
@@ -3459,6 +3501,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/mute-stream-npm-0.0.8-489a7d6c2b-315c40f463.zip/node_modules/mute-stream/",
           "packageDependencies": [
             ["mute-stream", "npm:0.0.8"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["nanoid", [
+        ["npm:3.1.30", {
+          "packageLocation": "./.yarn/cache/nanoid-npm-3.1.30-58cf6fe7ec-440f685e98.zip/node_modules/nanoid/",
+          "packageDependencies": [
+            ["nanoid", "npm:3.1.30"]
           ],
           "linkType": "HARD",
         }]
@@ -4286,6 +4337,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ini", "npm:1.3.8"],
             ["minimist", "npm:1.2.5"],
             ["strip-json-comments", "npm:2.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["react", [
+        ["npm:17.0.2", {
+          "packageLocation": "./.yarn/cache/react-npm-17.0.2-99ba37d931-7d0dfebafe.zip/node_modules/react/",
+          "packageDependencies": [
+            ["react", "npm:17.0.2"],
+            ["loose-envify", "npm:1.4.0"],
+            ["object-assign", "npm:4.1.1"]
           ],
           "linkType": "HARD",
         }]

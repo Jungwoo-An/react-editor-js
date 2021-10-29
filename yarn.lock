@@ -32,6 +32,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@editorjs/editorjs@npm:*":
+  version: 2.22.3
+  resolution: "@editorjs/editorjs@npm:2.22.3"
+  dependencies:
+    codex-notifier: ^1.1.2
+    codex-tooltip: ^1.0.2
+    nanoid: ^3.1.22
+  checksum: a4232ea90760f07328414f5825d7ce42e990d7244460306efc4b202b7b89a44dc12af758570618db36852fdd3451f6ef81e7247cacd0846bcd86f7c249696643
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -376,6 +387,12 @@ __metadata:
 "@react-editor-js/core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@react-editor-js/core@workspace:packages/core"
+  dependencies:
+    "@editorjs/editorjs": "*"
+    react: "*"
+  peerDependencies:
+    "@editorjs/editorjs": "*"
+    react: "*"
   languageName: unknown
   linkType: soft
 
@@ -1018,6 +1035,20 @@ __metadata:
   version: 1.1.0
   resolution: "code-point-at@npm:1.1.0"
   checksum: 7d9837296e0f1c00239c88542f5a3e0bad11e45d3d0e8d9d097901fe54722dd5d2c006969077a287be8648a202c43f74e096f17552cbd897568308fba7b87ac0
+  languageName: node
+  linkType: hard
+
+"codex-notifier@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "codex-notifier@npm:1.1.2"
+  checksum: 8c75f9d6a02c6895bd7b6fc2c8f694c9c5ab91ce377b7a618b170289cebe237a06b99ee90c3587fef25617deff57723c3068138fc3ba2e796a1b90b1cfa16a46
+  languageName: node
+  linkType: hard
+
+"codex-tooltip@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "codex-tooltip@npm:1.0.2"
+  checksum: 1abe98c11b17b3a69f106692e6ecb3f81ddd10c018aaa36e1f8ce9764528dbf779ee02f40acda6fe7c22e8835ed1d6b7e13fdb984540c7ae1a34b9ccc6300e65
   languageName: node
   linkType: hard
 
@@ -2255,7 +2286,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-tokens@npm:^4.0.0":
+"js-tokens@npm:^3.0.0 || ^4.0.0, js-tokens@npm:^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
   checksum: 1fc4e4667ac2d972aba65148b9cbf9c17566b2394d3504238d8492bbd3e68f496c657eab06b26b40b17db5cac0a34d153a12130e2d2d2bb6dc2cdc8a4764eb1b
@@ -2597,6 +2628,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"loose-envify@npm:^1.1.0":
+  version: 1.4.0
+  resolution: "loose-envify@npm:1.4.0"
+  dependencies:
+    js-tokens: ^3.0.0 || ^4.0.0
+  bin:
+    loose-envify: cli.js
+  checksum: 5c3b47bbe5f597a3889fb001a3a98aaea2a3fafa48089c19034de1e0121bf57dbee609d184478514d74d5c5a7e9cfa3d846343455e5123b060040d46c39e91dc
+  languageName: node
+  linkType: hard
+
 "lru-cache@npm:^6.0.0":
   version: 6.0.0
   resolution: "lru-cache@npm:6.0.0"
@@ -2903,6 +2945,15 @@ __metadata:
   version: 0.0.8
   resolution: "mute-stream@npm:0.0.8"
   checksum: 315c40f463ec31deee54c5b8779207feb6b63dd4c58fe0f84ad46abdd6dac1ada578d53efde4a47b0ae4d29d453d35bb39ecdd98ee9ebf538929039a3a9945df
+  languageName: node
+  linkType: hard
+
+"nanoid@npm:^3.1.22":
+  version: 3.1.30
+  resolution: "nanoid@npm:3.1.30"
+  bin:
+    nanoid: bin/nanoid.cjs
+  checksum: 440f685e9890bd96433cf6c01535165b1e9677ba4a5c4179e1a61612f0b4c428cc628425fe232038b93304d15b191892d7ced9503fa558d1296e4e95fe80a627
   languageName: node
   linkType: hard
 
@@ -3220,7 +3271,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"object-assign@npm:^4.1.0":
+"object-assign@npm:^4.1.0, object-assign@npm:^4.1.1":
   version: 4.1.1
   resolution: "object-assign@npm:4.1.1"
   checksum: 66cf021898fc1b13ea573ea8635fbd5a76533f50cecbc2fcd5eee1e8029af41bcebe7023788b6d0e06cbe4401ecea075d972f78ec74467cdc571a0f1a4d1a081
@@ -3639,6 +3690,16 @@ __metadata:
   bin:
     rc: ./cli.js
   checksum: ea2b7f7cee201a67923a2240de594a5d9b59bd312b814b06536d3d609a416dfd6fb9b85ea2abfd3b8a4eb5ed33eaff946ee75a8f2b7fb10941073c5cfee6b7a5
+  languageName: node
+  linkType: hard
+
+"react@npm:*":
+  version: 17.0.2
+  resolution: "react@npm:17.0.2"
+  dependencies:
+    loose-envify: ^1.1.0
+    object-assign: ^4.1.1
+  checksum: 7d0dfebafe1d297503157abb2e9acdb49852185deb8700c16f4a6faad87642f84903ab18cfc16f40b9a0dfe97540f99834982ee953e6d48b39c41608dc3e4b29
   languageName: node
   linkType: hard
 
