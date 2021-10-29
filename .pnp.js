@@ -562,7 +562,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ["workspace:packages/server", {
           "packageLocation": "./packages/server/",
           "packageDependencies": [
-            ["@react-editor-js/server", "workspace:packages/server"]
+            ["@react-editor-js/server", "workspace:packages/server"],
+            ["@react-editor-js/core", "virtual:dc0631d8412ff872a22a571f33b428db3dbf4750a199dfd9b2d56c015bb682da768dcb1b0c0a966daef410b86ba3aa6f1fd9f9b61a2384ecff07fb78d869b2b4#workspace:packages/core"],
+            ["@types/react", "npm:17.0.33"],
+            ["react", "npm:17.0.2"]
           ],
           "linkType": "SOFT",
         }]

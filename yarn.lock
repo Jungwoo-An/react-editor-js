@@ -417,6 +417,13 @@ __metadata:
 "@react-editor-js/server@workspace:packages/server":
   version: 0.0.0-use.local
   resolution: "@react-editor-js/server@workspace:packages/server"
+  dependencies:
+    "@react-editor-js/core": "workspace:packages/core"
+    "@types/react": "*"
+    react: "*"
+  peerDependencies:
+    "@react-editor-js/core": "*"
+    react: "*"
   languageName: unknown
   linkType: soft
 
