@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "ESNext",
+    "baseUrl": ".",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "declaration": true,
+    "sourceMap": true,
+    "paths": {
+      "@react-editor-js/*": ["packages/@react-editor-js/*/src"]
+    }
+  }
+}
