@@ -12,7 +12,7 @@ class ReactEditor extends Component {
     return (
       <ReactEditorJS
         tools={EDITOR_JS_TOOLS}
-        data={{
+        defaultValue={{
           time: 1635603431943,
           blocks: [
             {
