@@ -2,7 +2,9 @@
   <img alt="Logo" src="static/react-editor-js.png" width="100%">
 </div>
 
-<div align="center">
+<br>
+
+<div>
 
 [![npm version](https://badge.fury.io/js/react-editor-js.svg)](https://badge.fury.io/js/react-editor-js)
 ![LICENSE](https://img.shields.io/npm/l/react-editor-js?color=blue)
@@ -13,7 +15,7 @@
 
 ## 🍞 DEMO
 
-- [CodeSandbox](https://codesandbox.io/embed/react-editor-js-23opz)
+- [CodeSandbox](https://codesandbox.io/s/github/Jungwoo-An/react-editor-js/tree/master/examples)
 
 ## 🍀 Supported Official Plugin
 
