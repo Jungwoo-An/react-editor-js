@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="Logo" src="static/react-editor-js.png" width="400px">
+  <img alt="Logo" src="static/react-editor-js.png" width="100%">
 </div>
 
 <div align="center">
@@ -46,21 +46,20 @@ npm install --save-dev react-editor-js @editorjs/editorjs @editorjs/paragraph
 ### Usage
 
 ```js
-import EditorJs from 'react-editor-js';
-
-<EditorJs data={data} />;
+import EditorJs from 'react-editor-js'
+;<EditorJs data={data} />
 ```
 
 ## 📙 API
 
 Allow all options of [editor-js](https://github.com/codex-team/editor.js/blob/master/types/configs/editor-config.d.ts)
 
-| Name               | Type                                                                            | Description                                                        |
-| ------------------ | ------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| enableReInitialize | Boolean                                                                         | Change editor-js data when componentDidUpdate                      |
-| onChange           | (api: API, newData: OutputData) => void                                         | Fires when something changed in DOM                                |
+| Name               | Type                                                                            | Description                                                                                                                                           |
+| ------------------ | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| enableReInitialize | Boolean                                                                         | Change editor-js data when componentDidUpdate                                                                                                         |
+| onChange           | (api: API, newData: OutputData) => void                                         | Fires when something changed in DOM                                                                                                                   |
 | onCompareBlocks    | (newBlocks?: OutputData['blocks'], oldBlocks?: OutputData['blocks']) => boolean | Use to avoid Infinite update when enableReInitialize used with onChange ([Recommended Library](https://github.com/FormidableLabs/react-fast-compare)) |
-| onReady            | (instance?: EditorJS) => void                                                   | Use to execute callback when editor-js instance has initialized    |
+| onReady            | (instance?: EditorJS) => void                                                   | Use to execute callback when editor-js instance has initialized                                                                                       |
 
 ## 🧐 FAQ
 
@@ -75,10 +74,9 @@ npm install --save-dev @editorjs/checklist
 ```
 
 ```js
-import EditorJs from 'react-editor-js';
-import CheckList from '@editorjs/checklist';
-
-<EditorJs data={data} tools={{ checkList: CheckList }} />;
+import EditorJs from 'react-editor-js'
+import CheckList from '@editorjs/checklist'
+;<EditorJs data={data} tools={{ checkList: CheckList }} />
 ```
 
 We recommend to create a `tools.js` file and export your tools as a constant. Here is an example using all of the default plugins:
@@ -118,16 +116,15 @@ export const EDITOR_JS_TOOLS = {
   checklist: CheckList,
   delimiter: Delimiter,
   inlineCode: InlineCode,
-  simpleImage: SimpleImage
+  simpleImage: SimpleImage,
 }
 ```
 
 ```tsx
-import EditorJs from 'react-editor-js';
+import EditorJs from 'react-editor-js'
 import { EDITOR_JS_TOOLS } from './tools'
-<EditorJs data={data} tools={EDITOR_JS_TOOLS} />;
+;<EditorJs data={data} tools={EDITOR_JS_TOOLS} />
 ```
-
 
 You can read more about plugins/tools at [editor-js: Tools installation](https://editorjs.io/getting-started#tools-installation)
 
