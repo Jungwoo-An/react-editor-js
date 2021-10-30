@@ -8,7 +8,7 @@ const ReactEditorJS: ReactEditorJSComponent = function ReactEditorJS({
   tools,
   defaultValue,
   children,
-  enableReinitializeData,
+  value,
   onInitialize,
   ...restProps
 }: Props) {
@@ -43,10 +43,10 @@ const ReactEditorJS: ReactEditorJSComponent = function ReactEditorJS({
   }, [])
 
   React.useEffect(() => {
-    if (enableReinitializeData && defaultValue) {
-      editorJS.current?.blocks.render(defaultValue)
+    if (value) {
+      editorJS.current?.blocks.render(value)
     }
-  }, [enableReinitializeData, defaultValue])
+  }, [value])
 
   return children || <div id={memoizedHolder.current} />
 }
