@@ -22,7 +22,6 @@
     "@editorjs/table": "latest",
     "@editorjs/warning": "latest",
     "react": "latest",
-    "react-dom": "latest",
-    "react-editor-js": "latest"
+    "react-dom": "latest"
   }
 }
