@@ -9,6 +9,7 @@ const ReactEditorJS: ReactEditorJSComponent = function ReactEditorJS({
   data,
   children,
   enableReinitializeData,
+  onInitialize,
   ...restProps
 }: Props) {
   const memoizedHolder = React.useRef(
@@ -33,6 +34,8 @@ const ReactEditorJS: ReactEditorJSComponent = function ReactEditorJS({
       data,
       ...restProps,
     })
+
+    onInitialize?.(editorJS.current)
 
     return () => {
       editorJS.current?.destroy()
