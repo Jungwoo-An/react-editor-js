@@ -41,15 +41,13 @@
 ### Install via npm (or yarn)
 
 ```bash
-# editorjs and official plugins
-npm install --save-dev react-editor-js @editorjs/editorjs @editorjs/paragraph
+npm install --save react-editor-js @editorjs/editorjs @editorjs/paragraph ...other plugins
 ```
 
-### Usage
-
-```js
+```tsx
 import EditorJs from 'react-editor-js'
-;<EditorJs data={data} />
+
+<EditorJs defaultValue={blocks} />
 ```
 
 ## 📙 API
@@ -58,10 +56,9 @@ Allow all options of [editor-js](https://github.com/codex-team/editor.js/blob/ma
 
 | Name               | Type                                                                            | Description                                                                                                                                           |
 | ------------------ | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| enableReInitialize | Boolean                                                                         | Change editor-js data when componentDidUpdate                                                                                                         |
-| onChange           | (api: API, newData: OutputData) => void                                         | Fires when something changed in DOM                                                                                                                   |
-| onCompareBlocks    | (newBlocks?: OutputData['blocks'], oldBlocks?: OutputData['blocks']) => boolean | Use to avoid Infinite update when enableReInitialize used with onChange ([Recommended Library](https://github.com/FormidableLabs/react-fast-compare)) |
-| onReady            | (instance?: EditorJS) => void                                                   | Use to execute callback when editor-js instance has initialized                                                                                       |
+| defaulltValue | OutputData                                                                         | Initial data when using editor js as [uncontrolled component](https://ko.reactjs.org/docs/uncontrolled-components.html). highly recommend it                                                                                                         |
+| value | OutputData                                                                         | data when using editor js as [controlled component](https://ko.reactjs.org/docs/forms.html#controlled-components). <br> ⚠️ Don't use it with onChange prop as much as possible. Infinite loops can occur.                                                                                                         |
+| onInitialize            | (editorJS?: EditorJS) => void                                                   | Call after editor-js is initialized                                                                                       |
 
 ## 🧐 FAQ
 
@@ -75,10 +72,11 @@ To add more Block Tools, simply add them to your repo and pass them as `tools`-p
 npm install --save-dev @editorjs/checklist
 ```
 
-```js
+```tsx
 import EditorJs from 'react-editor-js'
 import CheckList from '@editorjs/checklist'
-;<EditorJs data={data} tools={{ checkList: CheckList }} />
+
+<EditorJs defaultValue={blocks} tools={{ checkList: CheckList }} />
 ```
 
 We recommend to create a `tools.js` file and export your tools as a constant. Here is an example using all of the default plugins:
@@ -125,7 +123,8 @@ export const EDITOR_JS_TOOLS = {
 ```tsx
 import EditorJs from 'react-editor-js'
 import { EDITOR_JS_TOOLS } from './tools'
-;<EditorJs data={data} tools={EDITOR_JS_TOOLS} />
+
+<EditorJs defaultValue={blocks} tools={EDITOR_JS_TOOLS} />
 ```
 
 You can read more about plugins/tools at [editor-js: Tools installation](https://editorjs.io/getting-started#tools-installation)
@@ -134,32 +133,28 @@ You can read more about plugins/tools at [editor-js: Tools installation](https:/
 
 It's simpleeeee
 
-```js
-render() {
-  return (
-    <EditorJs holder="custom">
-      <div id="custom" />
-    </EditorJs>
-  );
-}
+```tsx
+<EditorJs holder="custom">
+  <div id="custom" />
+</EditorJs>
 ```
 
 ### How to access editor-js instance?
 
 You can access using instanceRef
 
-```js
-async handleSave() {
-  const savedData = await this.editorInstance.save();
-}
+```tsx
+const editorJS = React.useRef(null)
 
-componentDidMount() {
-  this.editorInstance // access editor-js
-}
+const handleInitialize = React.useCallback((instance) => {
+  editorJS.current = instance
+}, [])
 
-render() {
-  return <EditorJs instanceRef={instance => this.editorInstance = instance} data={data} />
-}
+const handleSave = React.useCallback(() => {
+  const savedData = await editorJS.current.save();
+}, [])
+
+<EditorJs onInitialize={handleInitialize} defaultValue={blocks} />
 ```
 
 ### Haven't received data from server (when use Link)
@@ -169,17 +164,15 @@ You should set linkTool [config](https://github.com/editor-js/link#usage). 💪�
 ```tsx
 import LinkTool from '@editorjs/link'
 
-render() {
-  <EditorJs
-    data={data}
-    tools={{
-      linkTool: {
-        class: LinkTool,
-        config: {
-          endpoint: 'http://localhost:8008/fetchUrl', // Your backend endpoint for url data fetching
-        }
+<EditorJs
+  defaultValue={blocks}
+  tools={{
+    linkTool: {
+      class: LinkTool,
+      config: {
+        endpoint: 'http://localhost:8008/fetchUrl', // Your backend endpoint for url data fetching
       }
-    }}
-  />
-}
+    }
+  }}
+/>
 ```
