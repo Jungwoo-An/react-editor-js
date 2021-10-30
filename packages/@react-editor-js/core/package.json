@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@editorjs/editorjs": "*",
-    "react": "*"
+    "react": "*",
+    "typescript": "^4.3.5"
   }
 }
