@@ -6,7 +6,7 @@ import Paragraph from '@editorjs/paragraph'
 const ReactEditorJS: ReactEditorJSComponent = function ReactEditorJS({
   holder,
   tools,
-  data,
+  defaultValue,
   children,
   enableReinitializeData,
   onInitialize,
@@ -31,7 +31,7 @@ const ReactEditorJS: ReactEditorJSComponent = function ReactEditorJS({
     editorJS.current = new EditorJS({
       tools: extendTools,
       holder: memoizedHolder.current,
-      data,
+      ...(defaultValue && { data: defaultValue }),
       ...restProps,
     })
 
@@ -43,10 +43,10 @@ const ReactEditorJS: ReactEditorJSComponent = function ReactEditorJS({
   }, [])
 
   React.useEffect(() => {
-    if (enableReinitializeData) {
-      editorJS.current?.blocks.render(data)
+    if (enableReinitializeData && defaultValue) {
+      editorJS.current?.blocks.render(defaultValue)
     }
-  }, [enableReinitializeData, data])
+  }, [enableReinitializeData, defaultValue])
 
   return children || <div id={memoizedHolder.current} />
 }
