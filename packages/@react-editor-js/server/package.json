@@ -2,6 +2,9 @@
   "name": "@react-editor-js/server",
   "version": "2.0.0",
   "description": "The unofficial editor-js component for React on server",
+  "main": "./dist/server.cjs.js",
+  "module": "./dist/server.js",
+  "types": "./dist/server/src/index.d.ts",
   "peerDependencies": {
     "@react-editor-js/core": "*",
     "react": "*"
