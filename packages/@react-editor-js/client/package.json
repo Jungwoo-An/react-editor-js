@@ -1,0 +1,25 @@
+{
+  "name": "@react-editor-js/client",
+  "version": "2.0.0",
+  "description": "The unofficial editor-js component for React on client",
+  "main": "./dist/client.cjs.js",
+  "module": "./dist/client.js",
+  "types": "./dist/client/src/index.d.ts",
+  "peerDependencies": {
+    "@editorjs/editorjs": "*",
+    "@editorjs/paragraph": "*",
+    "@react-editor-js/core": "*",
+    "react": "*"
+  },
+  "dependencies": {
+    "@react-editor-js/core": "workspace:packages/@react-editor-js/core"
+  },
+  "devDependencies": {
+    "@editorjs/editorjs": "*",
+    "@editorjs/paragraph": "*",
+    "@types/react": "*",
+    "react": "*",
+    "tslib": "^2.3.1",
+    "typescript": "^4.3.5"
+  }
+}
