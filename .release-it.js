@@ -2,7 +2,7 @@ module.exports = {
   git: {
     tagName: 'v${version}',
     requireCleanWorkingDir: false,
-    commitMessage: 'release: v${version}',
+    commitMessage: 'release: v${version}\n\n[skip ci]',
   },
   github: {
     release: true,
