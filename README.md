@@ -15,7 +15,7 @@
 
 ## 🍞 DEMO
 
-- [CodeSandbox](https://codesandbox.io/s/github/Jungwoo-An/react-editor-js/tree/master/examples)
+- [CodeSandbox](https://codesandbox.io/s/react-editor-js-v2-34bfl)
 
 ## 🍀 Supported Official Plugin
 
@@ -45,9 +45,11 @@ npm install --save react-editor-js @editorjs/editorjs @editorjs/paragraph ...oth
 ```
 
 ```tsx
-import EditorJs from 'react-editor-js'
+import { createReactEditorJS } from 'react-editor-js'
 
-<EditorJs defaultValue={blocks} />
+const ReactEditorJS = createReactEditorJS()
+
+<ReactEditorJS defaultValue={blocks} />
 ```
 
 ## 📙 API
@@ -73,10 +75,12 @@ npm install --save-dev @editorjs/checklist
 ```
 
 ```tsx
-import EditorJs from 'react-editor-js'
+import { createReactEditorJS } from 'react-editor-js'
 import CheckList from '@editorjs/checklist'
 
-<EditorJs defaultValue={blocks} tools={{ checkList: CheckList }} />
+const ReactEditorJS = createReactEditorJS()
+
+<ReactEditorJS defaultValue={blocks} tools={{ checkList: CheckList }} />
 ```
 
 We recommend to create a `tools.js` file and export your tools as a constant. Here is an example using all of the default plugins:
@@ -121,10 +125,12 @@ export const EDITOR_JS_TOOLS = {
 ```
 
 ```tsx
-import EditorJs from 'react-editor-js'
+import { createReactEditorJS } from 'react-editor-js'
 import { EDITOR_JS_TOOLS } from './tools'
 
-<EditorJs defaultValue={blocks} tools={EDITOR_JS_TOOLS} />
+const ReactEditorJS = createReactEditorJS()
+
+<ReactEditorJS defaultValue={blocks} tools={EDITOR_JS_TOOLS} />
 ```
 
 You can read more about plugins/tools at [editor-js: Tools installation](https://editorjs.io/getting-started#tools-installation)
@@ -134,9 +140,9 @@ You can read more about plugins/tools at [editor-js: Tools installation](https:/
 It's simpleeeee
 
 ```tsx
-<EditorJs holder="custom">
+<ReactEditorJS holder="custom">
   <div id="custom" />
-</EditorJs>
+</ReactEditorJS>
 ```
 
 ### How to access editor-js instance?
@@ -154,7 +160,7 @@ const handleSave = React.useCallback(() => {
   const savedData = await editorJS.current.save();
 }, [])
 
-<EditorJs onInitialize={handleInitialize} defaultValue={blocks} />
+<ReactEditorJS onInitialize={handleInitialize} defaultValue={blocks} />
 ```
 
 ### Haven't received data from server (when use Link)
@@ -164,7 +170,7 @@ You should set linkTool [config](https://github.com/editor-js/link#usage). 💪�
 ```tsx
 import LinkTool from '@editorjs/link'
 
-<EditorJs
+<ReactEditorJS
   defaultValue={blocks}
   tools={{
     linkTool: {
