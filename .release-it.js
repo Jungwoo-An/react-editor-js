@@ -7,9 +7,7 @@ module.exports = {
   github: {
     release: true,
   },
-  npm: {
-    publish: true,
-  },
+  npm: false,
   plugins: {
     'release-it-yarn-workspaces': {
       skipChecks: true,
