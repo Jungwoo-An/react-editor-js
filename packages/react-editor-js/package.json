@@ -1,17 +1,17 @@
 {
   "name": "react-editor-js",
-  "version": "1.10.0",
+  "version": "2.0.0",
   "description": "The unofficial editor-js component for React",
   "main": "./dist/react-editor-js.cjs.js",
   "module": "./dist/react-editor-js.js",
   "types": "./dist/react-editor-js/src/index.d.ts",
   "peerDependencies": {
-    "@react-editor-js/client": "*",
-    "@react-editor-js/server": "*"
+    "@react-editor-js/client": "2.0.0",
+    "@react-editor-js/server": "2.0.0"
   },
   "dependencies": {
-    "@react-editor-js/client": "workspace:packages/@react-editor-js/client",
-    "@react-editor-js/server": "workspace:packages/@react-editor-js/server"
+    "@react-editor-js/client": "2.0.0",
+    "@react-editor-js/server": "2.0.0"
   },
   "devDependencies": {
     "tslib": "^2.3.1",
