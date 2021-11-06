@@ -10,13 +10,6 @@
     "packages/@react-editor-js/*",
     "packages/react-editor-js"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Jungwoo-An/react-editor-js.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Jungwoo-An/react-editor-js/issues"
-  },
   "devDependencies": {
     "@release-it/conventional-changelog": "^3.3.0",
     "@rollup/plugin-node-resolve": "^13.0.6",
