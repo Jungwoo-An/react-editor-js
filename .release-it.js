@@ -7,11 +7,13 @@ module.exports = {
   github: {
     release: true,
   },
-  npm: false,
+  npm: {
+    publish: true,
+  },
   plugins: {
     'release-it-yarn-workspaces': {
       skipChecks: true,
-      publish: false,
+      publish: true,
     },
     '@release-it/conventional-changelog': {
       preset: 'conventionalcommits',
