@@ -1,5 +1,4 @@
 {
   "buildCommand": "build",
-  "packages": ["packages/@react-editor-js/*", "packages/react-editor-js"],
   "sandboxes": ["/examples"]
 }
