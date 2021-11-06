@@ -15,7 +15,7 @@
 
 ## 🍞 DEMO
 
-- [CodeSandbox](https://codesandbox.io/s/github/Jungwoo-An/react-editor-js/tree/master/examples)
+- [CodeSandbox](https://codesandbox.io/s/react-editor-js-v2-34bfl)
 
 ## 🍀 Supported Official Plugin
 
@@ -45,9 +45,11 @@ npm install --save react-editor-js @editorjs/editorjs @editorjs/paragraph ...oth
 ```
 
 ```tsx
-import EditorJs from 'react-editor-js'
+import { createReactEditorJS } from 'react-editor-js'
 
-<EditorJs defaultValue={blocks} />
+const ReactEditorJS = createReactEditorJS()
+
+<ReactEditorJS defaultValue={blocks} />
 ```
 
 ## 📙 API
@@ -57,7 +59,7 @@ Allow all options of [editor-js](https://github.com/codex-team/editor.js/blob/ma
 | Name               | Type                                                                            | Description                                                                                                                                           |
 | ------------------ | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | defaulltValue | OutputData                                                                         | Initial data when using editor js as [uncontrolled component](https://ko.reactjs.org/docs/uncontrolled-components.html). highly recommend it                                                                                                         |
-| value | OutputData                                                                         | data when using editor js as [controlled component](https://ko.reactjs.org/docs/forms.html#controlled-components). <br> ⚠️ Don't use it with onChange prop as much as possible. Infinite loops can occur.                                                                                                         |
+| value | OutputData                                                                         | data when using editor js as [controlled component](https://ko.reactjs.org/docs/forms.html#controlled-components). <br> ⚠️ Don't use it with onChange prop. Infinite loops can occur.                                                                                                         |
 | onInitialize            | (editorJS?: EditorJS) => void                                                   | Call after editor-js is initialized                                                                                       |
 
 ## 🧐 FAQ
@@ -73,10 +75,12 @@ npm install --save-dev @editorjs/checklist
 ```
 
 ```tsx
-import EditorJs from 'react-editor-js'
+import { createReactEditorJS } from 'react-editor-js'
 import CheckList from '@editorjs/checklist'
 
-<EditorJs defaultValue={blocks} tools={{ checkList: CheckList }} />
+const ReactEditorJS = createReactEditorJS()
+
+<ReactEditorJS defaultValue={blocks} tools={{ checkList: CheckList }} />
 ```
 
 We recommend to create a `tools.js` file and export your tools as a constant. Here is an example using all of the default plugins:
@@ -101,9 +105,10 @@ import InlineCode from '@editorjs/inline-code'
 import SimpleImage from '@editorjs/simple-image'
 
 export const EDITOR_JS_TOOLS = {
+  // NOTE: Paragraph is default tool. Declare only when you want to change paragraph option.
+  // paragraph: Paragraph,
   embed: Embed,
   table: Table,
-  paragraph: Paragraph,
   list: List,
   warning: Warning,
   code: Code,
@@ -121,10 +126,12 @@ export const EDITOR_JS_TOOLS = {
 ```
 
 ```tsx
-import EditorJs from 'react-editor-js'
+import { createReactEditorJS } from 'react-editor-js'
 import { EDITOR_JS_TOOLS } from './tools'
 
-<EditorJs defaultValue={blocks} tools={EDITOR_JS_TOOLS} />
+const ReactEditorJS = createReactEditorJS()
+
+<ReactEditorJS defaultValue={blocks} tools={EDITOR_JS_TOOLS} />
 ```
 
 You can read more about plugins/tools at [editor-js: Tools installation](https://editorjs.io/getting-started#tools-installation)
@@ -134,9 +141,9 @@ You can read more about plugins/tools at [editor-js: Tools installation](https:/
 It's simpleeeee
 
 ```tsx
-<EditorJs holder="custom">
+<ReactEditorJS holder="custom">
   <div id="custom" />
-</EditorJs>
+</ReactEditorJS>
 ```
 
 ### How to access editor-js instance?
@@ -154,7 +161,7 @@ const handleSave = React.useCallback(() => {
   const savedData = await editorJS.current.save();
 }, [])
 
-<EditorJs onInitialize={handleInitialize} defaultValue={blocks} />
+<ReactEditorJS onInitialize={handleInitialize} defaultValue={blocks} />
 ```
 
 ### Haven't received data from server (when use Link)
@@ -164,7 +171,7 @@ You should set linkTool [config](https://github.com/editor-js/link#usage). 💪�
 ```tsx
 import LinkTool from '@editorjs/link'
 
-<EditorJs
+<ReactEditorJS
   defaultValue={blocks}
   tools={{
     linkTool: {
