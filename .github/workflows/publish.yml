@@ -3,56 +3,18 @@ name: release
 on: [push]
 
 jobs:
-  install:
+  release:
     runs-on: ubuntu-latest
-    if: "! contains(github.event.head_commit.message, '[skip ci]')"
+    if: "github.ref == 'refs/heads/master' && !contains(github.event.head_commit.message, '[ci skip]') && !contains(github.event.head_commit.message, '[skip ci]')"
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          node-version: 12
+          node-version: 14
       - uses: actions/cache@v1
         with:
           path: node_modules
           key: react-editor-js-${{ hashFiles('**/yarn.lock') }}
-      - run: npm install -g yarn
       - run: yarn
-
-  build:
-    needs: install
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: react-editor-js-${{ hashFiles('**/yarn.lock') }}
       - run: yarn build
-      - uses: actions/upload-artifact@v1
-        with:
-          name: dist
-          path: dist
-
-  publish:
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: react-editor-js-${{ hashFiles('**/yarn.lock') }}
-      - uses: actions/download-artifact@v1
-        with:
-          name: dist
-      - run: npx semantic-release --extends
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_ACCESS_TOKEN}}
-          NPM_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
+      - run: yarn release --ci
