@@ -62,6 +62,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["release-it", "npm:14.11.6"],
             ["release-it-yarn-workspaces", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:2.0.1"],
             ["rollup", "npm:2.58.3"],
+            ["rollup-plugin-copy", "npm:3.4.0"],
             ["rollup-plugin-typescript2", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:0.30.0"],
             ["semver", "npm:7.3.5"],
             ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=ddd1e8"]
@@ -606,6 +607,27 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-estree-npm-0.0.39-f898500e96-412fb5b986.zip/node_modules/@types/estree/",
           "packageDependencies": [
             ["@types/estree", "npm:0.0.39"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/fs-extra", [
+        ["npm:8.1.2", {
+          "packageLocation": "./.yarn/cache/@types-fs-extra-npm-8.1.2-3025d177dd-7277198ded.zip/node_modules/@types/fs-extra/",
+          "packageDependencies": [
+            ["@types/fs-extra", "npm:8.1.2"],
+            ["@types/node", "npm:16.11.6"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/glob", [
+        ["npm:7.2.0", {
+          "packageLocation": "./.yarn/cache/@types-glob-npm-7.2.0-772334bf9a-6ae717fedf.zip/node_modules/@types/glob/",
+          "packageDependencies": [
+            ["@types/glob", "npm:7.2.0"],
+            ["@types/minimatch", "npm:3.0.5"],
+            ["@types/node", "npm:16.11.6"]
           ],
           "linkType": "HARD",
         }]
@@ -1321,6 +1343,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/color-name-npm-1.1.4-025792b0ea-b044585952.zip/node_modules/color-name/",
           "packageDependencies": [
             ["color-name", "npm:1.1.4"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["colorette", [
+        ["npm:1.4.0", {
+          "packageLocation": "./.yarn/cache/colorette-npm-1.4.0-7e94b44dc3-01c3c16058.zip/node_modules/colorette/",
+          "packageDependencies": [
+            ["colorette", "npm:1.4.0"]
           ],
           "linkType": "HARD",
         }]
@@ -2389,6 +2420,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["globby", [
+        ["npm:10.0.1", {
+          "packageLocation": "./.yarn/cache/globby-npm-10.0.1-35fa2ba87a-a16754b93e.zip/node_modules/globby/",
+          "packageDependencies": [
+            ["globby", "npm:10.0.1"],
+            ["@types/glob", "npm:7.2.0"],
+            ["array-union", "npm:2.1.0"],
+            ["dir-glob", "npm:3.0.1"],
+            ["fast-glob", "npm:3.2.7"],
+            ["glob", "npm:7.1.7"],
+            ["ignore", "npm:5.1.9"],
+            ["merge2", "npm:1.4.1"],
+            ["slash", "npm:3.0.0"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:11.0.4", {
           "packageLocation": "./.yarn/cache/globby-npm-11.0.4-592ce71cca-d3e02d5e45.zip/node_modules/globby/",
           "packageDependencies": [
@@ -2982,6 +3028,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["is-plain-object", [
+        ["npm:3.0.1", {
+          "packageLocation": "./.yarn/cache/is-plain-object-npm-3.0.1-15b47fb6eb-d13fe75db3.zip/node_modules/is-plain-object/",
+          "packageDependencies": [
+            ["is-plain-object", "npm:3.0.1"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:5.0.0", {
           "packageLocation": "./.yarn/cache/is-plain-object-npm-5.0.0-285b70faa3-e32d27061e.zip/node_modules/is-plain-object/",
           "packageDependencies": [
@@ -4624,6 +4677,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["rollup-plugin-copy", [
+        ["npm:3.4.0", {
+          "packageLocation": "./.yarn/cache/rollup-plugin-copy-npm-3.4.0-1f9ca5b167-6eed5b2498.zip/node_modules/rollup-plugin-copy/",
+          "packageDependencies": [
+            ["rollup-plugin-copy", "npm:3.4.0"],
+            ["@types/fs-extra", "npm:8.1.2"],
+            ["colorette", "npm:1.4.0"],
+            ["fs-extra", "npm:8.1.0"],
+            ["globby", "npm:10.0.1"],
+            ["is-plain-object", "npm:3.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["rollup-plugin-typescript2", [
         ["npm:0.30.0", {
           "packageLocation": "./.yarn/cache/rollup-plugin-typescript2-npm-0.30.0-f985b92bb6-e3097bb25c.zip/node_modules/rollup-plugin-typescript2/",
@@ -4667,6 +4734,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["release-it", "npm:14.11.6"],
             ["release-it-yarn-workspaces", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:2.0.1"],
             ["rollup", "npm:2.58.3"],
+            ["rollup-plugin-copy", "npm:3.4.0"],
             ["rollup-plugin-typescript2", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:0.30.0"],
             ["semver", "npm:7.3.5"],
             ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=ddd1e8"]
