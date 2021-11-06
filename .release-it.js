@@ -11,7 +11,10 @@ module.exports = {
     publish: true,
   },
   plugins: {
-    'release-it-yarn-workspaces': {},
+    'release-it-yarn-workspaces': {
+      skipChecks: true,
+      publish: true,
+    },
     '@release-it/conventional-changelog': {
       preset: 'conventionalcommits',
     },
