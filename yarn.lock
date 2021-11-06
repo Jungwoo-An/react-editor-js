@@ -232,13 +232,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-editor-js/client@workspace:packages/@react-editor-js/client":
+"@react-editor-js/client@2.0.0, @react-editor-js/client@workspace:packages/@react-editor-js/client":
   version: 0.0.0-use.local
   resolution: "@react-editor-js/client@workspace:packages/@react-editor-js/client"
   dependencies:
     "@editorjs/editorjs": "*"
     "@editorjs/paragraph": "*"
-    "@react-editor-js/core": "workspace:packages/@react-editor-js/core"
+    "@react-editor-js/core": 2.0.0
     "@types/react": "*"
     react: "*"
     tslib: ^2.3.1
@@ -246,12 +246,12 @@ __metadata:
   peerDependencies:
     "@editorjs/editorjs": "*"
     "@editorjs/paragraph": "*"
-    "@react-editor-js/core": "*"
+    "@react-editor-js/core": 2.0.0
     react: "*"
   languageName: unknown
   linkType: soft
 
-"@react-editor-js/core@workspace:packages/@react-editor-js/core":
+"@react-editor-js/core@2.0.0, @react-editor-js/core@workspace:packages/@react-editor-js/core":
   version: 0.0.0-use.local
   resolution: "@react-editor-js/core@workspace:packages/@react-editor-js/core"
   dependencies:
@@ -264,17 +264,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-editor-js/server@workspace:packages/@react-editor-js/server":
+"@react-editor-js/server@2.0.0, @react-editor-js/server@workspace:packages/@react-editor-js/server":
   version: 0.0.0-use.local
   resolution: "@react-editor-js/server@workspace:packages/@react-editor-js/server"
   dependencies:
-    "@react-editor-js/core": "workspace:packages/@react-editor-js/core"
+    "@react-editor-js/core": 2.0.0
     "@types/react": "*"
     react: "*"
     tslib: ^2.3.1
     typescript: ^4.3.5
   peerDependencies:
-    "@react-editor-js/core": "*"
+    "@react-editor-js/core": 2.0.0
     react: "*"
   languageName: unknown
   linkType: soft
@@ -390,6 +390,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/fs-extra@npm:^8.0.1":
+  version: 8.1.2
+  resolution: "@types/fs-extra@npm:8.1.2"
+  dependencies:
+    "@types/node": "*"
+  checksum: 7277198ded9caea5750c82e569ba1e6fbac28cdb4a95e5d52d24e7c4c2ac90bf45fbe89e08fc21de8f9d3c9b302e30680566eb04e460c30ceac66ad24c161b37
+  languageName: node
+  linkType: hard
+
+"@types/glob@npm:^7.1.1":
+  version: 7.2.0
+  resolution: "@types/glob@npm:7.2.0"
+  dependencies:
+    "@types/minimatch": "*"
+    "@types/node": "*"
+  checksum: 6ae717fedfdfdad25f3d5a568323926c64f52ef35897bcac8aca8e19bc50c0bd84630bbd063e5d52078b2137d8e7d3c26eabebd1a2f03ff350fff8a91e79fc19
+  languageName: node
+  linkType: hard
+
 "@types/http-cache-semantics@npm:*":
   version: 4.0.1
   resolution: "@types/http-cache-semantics@npm:4.0.1"
@@ -406,7 +425,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/minimatch@npm:^3.0.3":
+"@types/minimatch@npm:*, @types/minimatch@npm:^3.0.3":
   version: 3.0.5
   resolution: "@types/minimatch@npm:3.0.5"
   checksum: c41d136f67231c3131cf1d4ca0b06687f4a322918a3a5adddc87ce90ed9dbd175a3610adee36b106ae68c0b92c637c35e02b58c8a56c424f71d30993ea220b92
@@ -1009,6 +1028,13 @@ __metadata:
   version: 1.1.4
   resolution: "color-name@npm:1.1.4"
   checksum: b0445859521eb4021cd0fb0cc1a75cecf67fceecae89b63f62b201cca8d345baf8b952c966862a9d9a2632987d4f6581f0ec8d957dfacece86f0a7919316f610
+  languageName: node
+  linkType: hard
+
+"colorette@npm:^1.1.0":
+  version: 1.4.0
+  resolution: "colorette@npm:1.4.0"
+  checksum: 01c3c16058b182a4ab4c126a65a75faa4d38a20fa7c845090b25453acec6c371bb2c5dceb0a2338511f17902b9d1a9af0cadd8509c9403894b79311032c256c3
   languageName: node
   linkType: hard
 
@@ -1636,7 +1662,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.1.1":
+"fast-glob@npm:^3.0.3, fast-glob@npm:^3.1.1":
   version: 3.2.7
   resolution: "fast-glob@npm:3.2.7"
   dependencies:
@@ -1733,7 +1759,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:8.1.0":
+"fs-extra@npm:8.1.0, fs-extra@npm:^8.1.0":
   version: 8.1.0
   resolution: "fs-extra@npm:8.1.0"
   dependencies:
@@ -1967,6 +1993,22 @@ fsevents@~2.3.2:
   dependencies:
     ini: 2.0.0
   checksum: 953c17cf14bf6ee0e2100ae82a0d779934eed8a3ec5c94a7a4f37c5b3b592c31ea015fb9a15cf32484de13c79f4a814f3015152f3e1d65976cfbe47c1bfe4a88
+  languageName: node
+  linkType: hard
+
+"globby@npm:10.0.1":
+  version: 10.0.1
+  resolution: "globby@npm:10.0.1"
+  dependencies:
+    "@types/glob": ^7.1.1
+    array-union: ^2.1.0
+    dir-glob: ^3.0.1
+    fast-glob: ^3.0.3
+    glob: ^7.1.3
+    ignore: ^5.1.1
+    merge2: ^1.2.3
+    slash: ^3.0.0
+  checksum: a16754b93eff58c1070ca9b0a92c69d9d97a184870fbc7dcb1b99a3ff202311ae66dd5662cbec874deaa888d0172024332e14d04d038c23949d5f8e29341dad2
   languageName: node
   linkType: hard
 
@@ -2207,7 +2249,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"ignore@npm:^5.1.4":
+"ignore@npm:^5.1.1, ignore@npm:^5.1.4":
   version: 5.1.9
   resolution: "ignore@npm:5.1.9"
   checksum: 6f6b2235f4e63648116c5814f76b2d3d63fae9c21b8a466862e865732f59e787c9938a9042f9457091db6f0d811508ea3c8c6a60f35bafc4ceea08bbe8f96fd5
@@ -2495,6 +2537,13 @@ fsevents@~2.3.2:
   version: 1.1.0
   resolution: "is-plain-obj@npm:1.1.0"
   checksum: 0ee04807797aad50859652a7467481816cbb57e5cc97d813a7dcd8915da8195dc68c436010bf39d195226cde6a2d352f4b815f16f26b7bf486a5754290629931
+  languageName: node
+  linkType: hard
+
+"is-plain-object@npm:^3.0.0":
+  version: 3.0.1
+  resolution: "is-plain-object@npm:3.0.1"
+  checksum: d13fe75db350d4ac669595cdfe0242ae87fcecddf2bca858d2dd443a6ed6eb1f69951fac8c2fa85b16106c6b0d7738fea86c2aca2ecee7fd61de15c1574f2cc5
   languageName: node
   linkType: hard
 
@@ -2855,7 +2904,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"merge2@npm:^1.3.0":
+"merge2@npm:^1.2.3, merge2@npm:^1.3.0":
   version: 1.4.1
   resolution: "merge2@npm:1.4.1"
   checksum: 7268db63ed5169466540b6fb947aec313200bcf6d40c5ab722c22e242f651994619bcd85601602972d3c85bd2cc45a358a4c61937e9f11a061919a1da569b0c2
@@ -3660,13 +3709,13 @@ fsevents@~2.3.2:
   version: 0.0.0-use.local
   resolution: "react-editor-js@workspace:packages/react-editor-js"
   dependencies:
-    "@react-editor-js/client": "workspace:packages/@react-editor-js/client"
-    "@react-editor-js/server": "workspace:packages/@react-editor-js/server"
+    "@react-editor-js/client": 2.0.0
+    "@react-editor-js/server": 2.0.0
     tslib: ^2.3.1
     typescript: ^4.3.5
   peerDependencies:
-    "@react-editor-js/client": "*"
-    "@react-editor-js/server": "*"
+    "@react-editor-js/client": 2.0.0
+    "@react-editor-js/server": 2.0.0
   languageName: unknown
   linkType: soft
 
@@ -3960,6 +4009,19 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"rollup-plugin-copy@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "rollup-plugin-copy@npm:3.4.0"
+  dependencies:
+    "@types/fs-extra": ^8.0.1
+    colorette: ^1.1.0
+    fs-extra: ^8.1.0
+    globby: 10.0.1
+    is-plain-object: ^3.0.0
+  checksum: 6eed5b2498fbe44d694f65ae9a9287b13a606b98a232b5a144a94140e8631efae5f5953b573ba68bf2dc59ab11c223ad3ea6f6cd15b51f42287f4bcc234f0e8b
+  languageName: node
+  linkType: hard
+
 "rollup-plugin-typescript2@npm:^0.30.0":
   version: 0.30.0
   resolution: "rollup-plugin-typescript2@npm:0.30.0"
@@ -4001,6 +4063,7 @@ fsevents@~2.3.2:
     release-it: ^14.11.6
     release-it-yarn-workspaces: ^2.0.1
     rollup: ^2.58.3
+    rollup-plugin-copy: ^3.4.0
     rollup-plugin-typescript2: ^0.30.0
     semver: ^7.3.5
     typescript: ^4.3.5

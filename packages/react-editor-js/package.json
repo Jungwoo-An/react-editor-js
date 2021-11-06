@@ -5,6 +5,14 @@
   "main": "./dist/react-editor-js.cjs.js",
   "module": "./dist/react-editor-js.js",
   "types": "./dist/react-editor-js/src/index.d.ts",
+  "author": "Jungwoo An <o1o9814@naver.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jungwoo-An/react-editor-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jungwoo-An/react-editor-js/issues"
+  },
   "peerDependencies": {
     "@react-editor-js/client": "2.0.0",
     "@react-editor-js/server": "2.0.0"
