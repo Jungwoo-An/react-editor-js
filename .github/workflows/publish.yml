@@ -25,4 +25,4 @@ jobs:
       - run: yarn build
       - run: git config user.email "o1o9814@naver.com"
       - run: git config user.name "Jungwoo-An"
-      - run: yarn release --ci --dry-run --debug
+      - run: yarn release --ci
