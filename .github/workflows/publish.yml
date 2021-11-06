@@ -12,6 +12,8 @@ jobs:
     if: "github.ref == 'refs/heads/master' && !contains(github.event.head_commit.message, '[ci skip]') && !contains(github.event.head_commit.message, '[skip ci]')"
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v2
         with:
           node-version: 14
@@ -21,4 +23,6 @@ jobs:
           key: react-editor-js-${{ hashFiles('**/yarn.lock') }}
       - run: yarn
       - run: yarn build
-      - run: yarn release --ci
+      - run: git config user.email "o1o9814@naver.com"
+      - run: git config user.name "Jungwoo-An"
+      - run: yarn release --ci --dry-run --debug
