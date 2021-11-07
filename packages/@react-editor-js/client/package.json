@@ -1,6 +1,6 @@
 {
   "name": "@react-editor-js/client",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "The unofficial editor-js component for React on client",
   "main": "./dist/client.cjs.js",
   "module": "./dist/client.js",
@@ -15,11 +15,11 @@
   "peerDependencies": {
     "@editorjs/editorjs": "*",
     "@editorjs/paragraph": "*",
-    "@react-editor-js/core": "2.0.2",
+    "@react-editor-js/core": "2.0.3",
     "react": "*"
   },
   "dependencies": {
-    "@react-editor-js/core": "2.0.2"
+    "@react-editor-js/core": "2.0.3"
   },
   "devDependencies": {
     "@editorjs/editorjs": "*",
