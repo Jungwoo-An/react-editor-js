@@ -1,7 +1,9 @@
 export function createReactEditorJS() {
   if (typeof window !== 'undefined') {
-    return require('@react-editor-js/client')
+    const Component = require('@react-editor-js/client')
+    return Component.default || Component
   } else {
-    return require('@react-editor-js/server')
+    const Component = require('@react-editor-js/server')
+    return Component.default || Component
   }
 }
