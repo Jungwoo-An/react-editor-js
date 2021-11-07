@@ -4364,6 +4364,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-editor-js", "workspace:packages/react-editor-js"],
             ["@react-editor-js/client", "virtual:4a6625c4b2e390f05712a53905d07a9bb31b321796835eac85dafc36cc372e8609559744fc2166d75ef6a59670220f76b4fc0dcb1521667fcb6f6758e80f8494#workspace:packages/@react-editor-js/client"],
             ["@react-editor-js/server", "virtual:4a6625c4b2e390f05712a53905d07a9bb31b321796835eac85dafc36cc372e8609559744fc2166d75ef6a59670220f76b4fc0dcb1521667fcb6f6758e80f8494#workspace:packages/@react-editor-js/server"],
+            ["@types/node", "npm:16.11.6"],
             ["tslib", "npm:2.3.1"],
             ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=ddd1e8"]
           ],

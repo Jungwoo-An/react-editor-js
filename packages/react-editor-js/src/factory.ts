@@ -1,10 +1,7 @@
-import ReactEditorJSForClient from '@react-editor-js/client'
-import ReactEditorJSForServer from '@react-editor-js/server'
-
 export function createReactEditorJS() {
   if (typeof window !== 'undefined') {
-    return ReactEditorJSForClient
+    return require('@react-editor-js/client')
   } else {
-    return ReactEditorJSForServer
+    return require('@react-editor-js/server')
   }
 }
