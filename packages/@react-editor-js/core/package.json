@@ -5,7 +5,6 @@
   "main": "./dist/core.cjs.js",
   "module": "./dist/core.js",
   "types": "./dist/core/src/index.d.ts",
-  "author": "Jungwoo An <o1o9814@naver.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/Jungwoo-An/react-editor-js.git"
