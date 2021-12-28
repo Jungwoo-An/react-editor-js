@@ -24,6 +24,7 @@
   "devDependencies": {
     "@editorjs/editorjs": "*",
     "@editorjs/paragraph": "*",
+    "@types/jest": "^27.0.3",
     "@types/react": "*",
     "react": "*",
     "tslib": "^2.3.1",
