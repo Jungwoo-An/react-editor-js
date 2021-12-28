@@ -1,9 +1,9 @@
 import React from 'react'
-import { ReactEditorJSComponent, Props } from '@react-editor-js/core'
+import { Props } from '@react-editor-js/core'
 import EditorJS from '@editorjs/editorjs'
 import Paragraph from '@editorjs/paragraph'
 
-const ReactEditorJS: ReactEditorJSComponent = function ReactEditorJS({
+const ReactEditorJS = function ReactEditorJS({
   factory,
   holder,
   tools,
