@@ -1,1 +1,1 @@
-export * from './ReactEditorJSClient'
+export { default } from './ReactEditorJSClient'

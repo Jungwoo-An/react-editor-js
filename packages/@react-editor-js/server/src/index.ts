@@ -1,1 +1,1 @@
-export * from './ReactEditorJSServer'
+export { default } from './ReactEditorJSServer'
