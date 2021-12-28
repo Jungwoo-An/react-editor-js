@@ -1,0 +1,25 @@
+name: test
+
+on: [push]
+
+env:
+  GITHUB_TOKEN: ${{secrets.GITHUB_ACCESS_TOKEN}}
+  NPM_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    if: "github.ref != 'refs/heads/master'"
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: react-editor-js-${{ hashFiles('**/yarn.lock') }}
+      - run: yarn
+      - run: yarn test
