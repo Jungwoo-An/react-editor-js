@@ -819,6 +819,7 @@ __metadata:
     "@editorjs/editorjs": "*"
     "@editorjs/paragraph": "*"
     "@react-editor-js/core": 2.0.4
+    "@types/jest": ^27.0.3
     "@types/react": "*"
     react: "*"
     tslib: ^2.3.1
