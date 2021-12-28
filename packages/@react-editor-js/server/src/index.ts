@@ -1,3 +1,1 @@
-import ReactEditorJS from './ReactEditorJS'
-
-export default ReactEditorJS
+export { default } from './ReactEditorJSServer'

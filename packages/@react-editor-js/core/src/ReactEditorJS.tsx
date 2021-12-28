@@ -1,17 +1,19 @@
 import React from 'react'
-import { ReactEditorJSComponent, Props } from '@react-editor-js/core'
+import { Props } from '@react-editor-js/core'
 import EditorJS from '@editorjs/editorjs'
 import Paragraph from '@editorjs/paragraph'
 
-const ReactEditorJS: ReactEditorJSComponent = function ReactEditorJS({
+function ReactEditorJS({
+  factory,
   holder,
   tools,
   defaultValue,
   children,
   value,
+
   onInitialize,
   ...restProps
-}: Props) {
+}: Props): React.ReactElement {
   const memoizedHolder = React.useRef(
     holder ?? `react-editor-js-${Date.now().toString(16)}`
   )
@@ -28,7 +30,7 @@ const ReactEditorJS: ReactEditorJSComponent = function ReactEditorJS({
       ...tools,
     }
 
-    editorJS.current = new EditorJS({
+    editorJS.current = factory.create({
       tools: extendTools,
       holder: memoizedHolder.current,
       ...(defaultValue && { data: defaultValue }),

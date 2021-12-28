@@ -14,8 +14,6 @@
   },
   "peerDependencies": {
     "@editorjs/editorjs": "*",
-    "@editorjs/paragraph": "*",
-    "@react-editor-js/core": "2.0.4",
     "react": "*"
   },
   "dependencies": {
@@ -23,11 +21,8 @@
   },
   "devDependencies": {
     "@editorjs/editorjs": "*",
-    "@editorjs/paragraph": "*",
-    "@types/jest": "^27.0.3",
     "@types/react": "*",
     "react": "*",
-    "tslib": "^2.3.1",
     "typescript": "^4.3.5"
   }
 }
