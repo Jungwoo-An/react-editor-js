@@ -19,6 +19,8 @@ function createRollupConfig({ basePath }) {
     plugins: [
       typescript({
         tsconfig: path.join(basePath, 'tsconfig.json'),
+        cwd: basePath,
+        clean: true,
       }),
       resolve({
         extensions: ['.ts', '.js'],
@@ -37,8 +39,14 @@ function createRollupConfig({ basePath }) {
 }
 
 export default [
-  createRollupConfig({ basePath: './packages/@react-editor-js/core' }),
-  createRollupConfig({ basePath: './packages/@react-editor-js/client' }),
-  createRollupConfig({ basePath: './packages/@react-editor-js/server' }),
-  createRollupConfig({ basePath: './packages/react-editor-js' }),
+  createRollupConfig({
+    basePath: path.resolve('./packages/@react-editor-js/core'),
+  }),
+  createRollupConfig({
+    basePath: path.resolve('./packages/@react-editor-js/client'),
+  }),
+  createRollupConfig({
+    basePath: path.resolve('./packages/@react-editor-js/server'),
+  }),
+  createRollupConfig({ basePath: path.resolve('./packages/react-editor-js') }),
 ]
