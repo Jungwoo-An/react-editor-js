@@ -4,7 +4,7 @@
   "description": "The unofficial editor-js component for React on client",
   "main": "./dist/core.cjs.js",
   "module": "./dist/core.js",
-  "types": "./dist/core/src/index.d.ts",
+  "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/Jungwoo-An/react-editor-js.git"
