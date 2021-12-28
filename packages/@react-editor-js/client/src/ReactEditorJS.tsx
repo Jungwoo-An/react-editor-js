@@ -4,11 +4,13 @@ import EditorJS from '@editorjs/editorjs'
 import Paragraph from '@editorjs/paragraph'
 
 const ReactEditorJS: ReactEditorJSComponent = function ReactEditorJS({
+  factory,
   holder,
   tools,
   defaultValue,
   children,
   value,
+
   onInitialize,
   ...restProps
 }: Props) {
@@ -28,7 +30,7 @@ const ReactEditorJS: ReactEditorJSComponent = function ReactEditorJS({
       ...tools,
     }
 
-    editorJS.current = new EditorJS({
+    editorJS.current = factory.create({
       tools: extendTools,
       holder: memoizedHolder.current,
       ...(defaultValue && { data: defaultValue }),
