@@ -1,6 +1,6 @@
 {
   "name": "react-editor-js",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "The unofficial editor-js component for React",
   "main": "./dist/react-editor-js.cjs.js",
   "module": "./dist/react-editor-js.js",
@@ -13,12 +13,12 @@
     "url": "https://github.com/Jungwoo-An/react-editor-js/issues"
   },
   "peerDependencies": {
-    "@react-editor-js/client": "2.0.4",
-    "@react-editor-js/server": "2.0.4"
+    "@react-editor-js/client": "2.0.5",
+    "@react-editor-js/server": "2.0.5"
   },
   "dependencies": {
-    "@react-editor-js/client": "2.0.4",
-    "@react-editor-js/server": "2.0.4"
+    "@react-editor-js/client": "2.0.5",
+    "@react-editor-js/server": "2.0.5"
   },
   "devDependencies": {
     "@types/node": "^16.11.6",
