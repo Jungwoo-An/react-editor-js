@@ -3,7 +3,7 @@ import { Props } from '@react-editor-js/core'
 import EditorJS from '@editorjs/editorjs'
 import Paragraph from '@editorjs/paragraph'
 
-const ReactEditorJS = function ReactEditorJS({
+function ReactEditorJS({
   factory,
   holder,
   tools,
