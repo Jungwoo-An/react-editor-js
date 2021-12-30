@@ -1,15 +1,16 @@
 import React from 'react'
-import EditorJS, { EditorConfig } from '@editorjs/editorjs'
+import { EditorConfig } from '@editorjs/editorjs'
 
-import { EditorJSFactory } from './factory'
+import { EditorCoreFactory } from './factory'
+import { EditorCore } from './editor-core'
 
 export interface Props extends Omit<EditorConfig, 'data'> {
-  factory: EditorJSFactory
+  factory: EditorCoreFactory
 
   holder?: string
   children?: React.ReactElement
   value?: EditorConfig['data']
   defaultValue?: EditorConfig['data']
 
-  onInitialize?: (editorJS: EditorJS) => void
+  onInitialize?: (core: EditorCore) => void
 }

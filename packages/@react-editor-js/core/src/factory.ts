@@ -1,5 +1,5 @@
-import EditorJS, { EditorConfig } from '@editorjs/editorjs'
+import { EditorConfig } from '@editorjs/editorjs'
 
-export interface EditorJSFactory {
-  create(config?: EditorConfig | string): EditorJS
-}
+import { EditorCore } from './editor-core'
+
+export type EditorCoreFactory = (config: EditorConfig) => EditorCore
