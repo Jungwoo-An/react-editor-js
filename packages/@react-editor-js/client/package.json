@@ -14,6 +14,7 @@
   },
   "peerDependencies": {
     "@editorjs/editorjs": "*",
+    "@editorjs/paragraph": "*",
     "react": "*"
   },
   "dependencies": {
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "@editorjs/editorjs": "*",
+    "@editorjs/paragraph": "*",
     "@types/react": "*",
     "react": "*",
     "typescript": "^4.3.5"

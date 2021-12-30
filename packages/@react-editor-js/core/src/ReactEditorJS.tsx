@@ -1,5 +1,4 @@
 import React from 'react'
-import Paragraph from '@editorjs/paragraph'
 
 import { Props } from './component-types'
 import { EditorCore } from './editor-core'
@@ -7,7 +6,6 @@ import { EditorCore } from './editor-core'
 function ReactEditorJS({
   factory,
   holder,
-  tools,
   defaultValue,
   children,
   value,
@@ -22,17 +20,7 @@ function ReactEditorJS({
   const editorJS = React.useRef<EditorCore | null>(null)
 
   React.useEffect(() => {
-    const extendTools = {
-      // default tools
-      paragraph: {
-        class: Paragraph,
-        inlineToolbar: true,
-      },
-      ...tools,
-    }
-
     editorJS.current = factory({
-      tools: extendTools,
       holder: memoizedHolder.current,
       ...(defaultValue && { data: defaultValue }),
       ...restProps,

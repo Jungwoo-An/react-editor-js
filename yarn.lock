@@ -826,12 +826,14 @@ __metadata:
   resolution: "@react-editor-js/client@workspace:packages/@react-editor-js/client"
   dependencies:
     "@editorjs/editorjs": "*"
+    "@editorjs/paragraph": "*"
     "@react-editor-js/core": 2.0.5
     "@types/react": "*"
     react: "*"
     typescript: ^4.3.5
   peerDependencies:
     "@editorjs/editorjs": "*"
+    "@editorjs/paragraph": "*"
     react: "*"
   languageName: unknown
   linkType: soft
@@ -841,7 +843,6 @@ __metadata:
   resolution: "@react-editor-js/core@workspace:packages/@react-editor-js/core"
   dependencies:
     "@editorjs/editorjs": "*"
-    "@editorjs/paragraph": "*"
     "@testing-library/react": ^12.1.2
     "@types/jest": ^27.0.3
     "@types/react": "*"
@@ -851,7 +852,6 @@ __metadata:
     typescript: ^4.3.5
   peerDependencies:
     "@editorjs/editorjs": "*"
-    "@editorjs/paragraph": "*"
     react: "*"
   languageName: unknown
   linkType: soft
