@@ -1,6 +1,6 @@
 {
   "name": "@react-editor-js/server",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "The unofficial editor-js component for React on server",
   "main": "./dist/server.cjs.js",
   "module": "./dist/server.js",
@@ -15,11 +15,11 @@
   "peerDependencies": {
     "@editorjs/editorjs": "*",
     "@editorjs/paragraph": "*",
-    "@react-editor-js/core": "2.0.5",
+    "@react-editor-js/core": "2.0.6",
     "react": "*"
   },
   "dependencies": {
-    "@react-editor-js/core": "2.0.5"
+    "@react-editor-js/core": "2.0.6"
   },
   "devDependencies": {
     "@editorjs/editorjs": "*",
