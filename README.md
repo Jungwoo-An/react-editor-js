@@ -60,7 +60,7 @@ Allow all options of [editor-js](https://github.com/codex-team/editor.js/blob/ma
 | ------------------ | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | defaulltValue | OutputData                                                                         | Initial data when using editor js as [uncontrolled component](https://ko.reactjs.org/docs/uncontrolled-components.html). highly recommend it                                                                                                         |
 | value | OutputData                                                                         | data when using editor js as [controlled component](https://ko.reactjs.org/docs/forms.html#controlled-components). <br> ⚠️ Don't use it with onChange prop. Infinite loops can occur.                                                                                                         |
-| onInitialize            | (editorJS?: EditorJS) => void                                                   | Call after editor-js is initialized                                                                                       |
+| onInitialize            | (editorCore?: EditorCore) => void                                                   | Call after editor-js is initialized                                                                                       |
 
 ## 🧐 FAQ
 
