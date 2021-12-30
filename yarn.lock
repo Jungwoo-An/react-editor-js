@@ -830,6 +830,7 @@ __metadata:
     "@react-editor-js/core": 2.0.5
     "@types/react": "*"
     react: "*"
+    tslib: ^2.3.1
     typescript: ^4.3.5
   peerDependencies:
     "@editorjs/editorjs": "*"

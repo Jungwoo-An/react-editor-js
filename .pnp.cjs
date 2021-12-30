@@ -1354,6 +1354,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/editorjs__paragraph", null],
             ["@types/react", "npm:17.0.33"],
             ["react", "npm:17.0.2"],
+            ["tslib", "npm:2.3.1"],
             ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=ddd1e8"]
           ],
           "packagePeers": [
@@ -1371,6 +1372,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@react-editor-js/core", "virtual:eeb0d27880fc71d7dbdd75f46f96f2cd8c3469844f42ed8de1a5901da8507ca8a61db6d3a214e4f8ab09bd225e7e7aafc68ad2322d87d5811b50bdc2842d9768#workspace:packages/@react-editor-js/core"],
             ["@types/react", "npm:17.0.33"],
             ["react", "npm:17.0.2"],
+            ["tslib", "npm:2.3.1"],
             ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=ddd1e8"]
           ],
           "linkType": "SOFT",
