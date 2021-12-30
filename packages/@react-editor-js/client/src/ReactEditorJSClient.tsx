@@ -4,7 +4,7 @@ import {
   ReactEditorJS,
 } from '@react-editor-js/core'
 
-import { ClientEditorCore } from './ClientEditorCore'
+import { ClientEditorCore } from './client-editor-core'
 import { EditorConfig } from '@editorjs/editorjs'
 
 export type Props = Omit<ReactEditorJSProps, 'factory'>
