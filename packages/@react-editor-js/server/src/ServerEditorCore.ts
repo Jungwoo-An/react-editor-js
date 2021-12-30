@@ -10,13 +10,13 @@ export class ServerEditorCore implements EditorCore {
     }
   }
 
-  async clear() {}
+  public async clear() {}
 
-  async save() {
+  public async save() {
     return this._memoizedData
   }
 
-  async destroy() {}
+  public async destroy() {}
 
-  async render() {}
+  public async render() {}
 }

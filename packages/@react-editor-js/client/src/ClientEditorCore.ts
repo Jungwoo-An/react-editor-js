@@ -21,19 +21,19 @@ export class ClientEditorCore implements EditorCore {
     })
   }
 
-  async clear() {
+  public async clear() {
     await this._editorJS.clear()
   }
 
-  async save() {
+  public async save() {
     return this._editorJS.save()
   }
 
-  async destroy() {
+  public async destroy() {
     await this._editorJS.destroy()
   }
 
-  async render(data: OutputData) {
+  public async render(data: OutputData) {
     await this._editorJS.render(data)
   }
 }
