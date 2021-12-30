@@ -14,12 +14,10 @@
   },
   "peerDependencies": {
     "@editorjs/editorjs": "*",
-    "@editorjs/paragraph": "*",
     "react": "*"
   },
   "devDependencies": {
     "@editorjs/editorjs": "*",
-    "@editorjs/paragraph": "*",
     "@testing-library/react": "^12.1.2",
     "@types/jest": "^27.0.3",
     "@types/react": "*",

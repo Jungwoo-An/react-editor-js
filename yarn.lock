@@ -821,27 +821,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-editor-js/client@2.0.4, @react-editor-js/client@workspace:packages/@react-editor-js/client":
+"@react-editor-js/client@2.0.5, @react-editor-js/client@workspace:packages/@react-editor-js/client":
   version: 0.0.0-use.local
   resolution: "@react-editor-js/client@workspace:packages/@react-editor-js/client"
   dependencies:
     "@editorjs/editorjs": "*"
-    "@react-editor-js/core": 2.0.4
+    "@editorjs/paragraph": "*"
+    "@react-editor-js/core": 2.0.5
     "@types/react": "*"
     react: "*"
+    tslib: ^2.3.1
     typescript: ^4.3.5
   peerDependencies:
     "@editorjs/editorjs": "*"
+    "@editorjs/paragraph": "*"
     react: "*"
   languageName: unknown
   linkType: soft
 
-"@react-editor-js/core@2.0.4, @react-editor-js/core@workspace:packages/@react-editor-js/core":
+"@react-editor-js/core@2.0.5, @react-editor-js/core@workspace:packages/@react-editor-js/core":
   version: 0.0.0-use.local
   resolution: "@react-editor-js/core@workspace:packages/@react-editor-js/core"
   dependencies:
     "@editorjs/editorjs": "*"
-    "@editorjs/paragraph": "*"
     "@testing-library/react": ^12.1.2
     "@types/jest": ^27.0.3
     "@types/react": "*"
@@ -851,22 +853,25 @@ __metadata:
     typescript: ^4.3.5
   peerDependencies:
     "@editorjs/editorjs": "*"
-    "@editorjs/paragraph": "*"
     react: "*"
   languageName: unknown
   linkType: soft
 
-"@react-editor-js/server@2.0.4, @react-editor-js/server@workspace:packages/@react-editor-js/server":
+"@react-editor-js/server@2.0.5, @react-editor-js/server@workspace:packages/@react-editor-js/server":
   version: 0.0.0-use.local
   resolution: "@react-editor-js/server@workspace:packages/@react-editor-js/server"
   dependencies:
-    "@react-editor-js/core": 2.0.4
+    "@editorjs/editorjs": "*"
+    "@editorjs/paragraph": "*"
+    "@react-editor-js/core": 2.0.5
     "@types/react": "*"
     react: "*"
     tslib: ^2.3.1
     typescript: ^4.3.5
   peerDependencies:
-    "@react-editor-js/core": 2.0.4
+    "@editorjs/editorjs": "*"
+    "@editorjs/paragraph": "*"
+    "@react-editor-js/core": 2.0.5
     react: "*"
   languageName: unknown
   linkType: soft
@@ -5798,14 +5803,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "react-editor-js@workspace:packages/react-editor-js"
   dependencies:
-    "@react-editor-js/client": 2.0.4
-    "@react-editor-js/server": 2.0.4
+    "@react-editor-js/client": 2.0.5
+    "@react-editor-js/server": 2.0.5
     "@types/node": ^16.11.6
     tslib: ^2.3.1
     typescript: ^4.3.5
   peerDependencies:
-    "@react-editor-js/client": 2.0.4
-    "@react-editor-js/server": 2.0.4
+    "@react-editor-js/client": 2.0.5
+    "@react-editor-js/server": 2.0.5
   languageName: unknown
   linkType: soft
 

@@ -2,16 +2,17 @@ import React from 'react'
 import { render, waitFor } from '@testing-library/react'
 
 import ReactEditorJS from '../src/ReactEditorJS'
-import { EditorJSStubFactory } from './EditorJSStubFactory'
+
+import { TestEditorCore } from './TestEditorCore'
 import { Task } from './Task'
 
 describe('ReactEditorJS', () => {
   it('should be able to set the holder', () => {
     const HOLDER = 'TEST_HOLDER'
 
-    render(
-      <ReactEditorJS factory={new EditorJSStubFactory()} holder={HOLDER} />
-    )
+    const factory = () => new TestEditorCore()
+
+    render(<ReactEditorJS factory={factory} holder={HOLDER} />)
 
     expect(document.querySelector(`#${HOLDER}`)).toBeTruthy()
   })
@@ -21,8 +22,10 @@ describe('ReactEditorJS', () => {
     const TEST_ID = 'TEST_ID'
     const ELEMENT = <div id={HOLDER} data-testid={TEST_ID} />
 
+    const factory = () => new TestEditorCore()
+
     const { getByTestId } = render(
-      <ReactEditorJS factory={new EditorJSStubFactory()} holder={HOLDER}>
+      <ReactEditorJS factory={factory} holder={HOLDER}>
         {ELEMENT}
       </ReactEditorJS>
     )
@@ -33,7 +36,9 @@ describe('ReactEditorJS', () => {
   })
 
   it('should pass editor-js instance as parameter on onInitialize', async () => {
-    const factory = new EditorJSStubFactory()
+    const editorCore = new TestEditorCore()
+    const factory = () => editorCore
+
     const task = new Task()
     const handleInitialize = jest.fn(() => {
       task.done()
@@ -43,7 +48,7 @@ describe('ReactEditorJS', () => {
 
     await task.wait()
 
-    expect(handleInitialize).toHaveBeenCalledWith(factory.instance)
+    expect(handleInitialize).toHaveBeenCalledWith(editorCore)
   })
 
   it('should update data when value changed', async () => {
@@ -55,7 +60,8 @@ describe('ReactEditorJS', () => {
       blocks: ['NEW_VALUE'],
     }
 
-    const factory = new EditorJSStubFactory()
+    const editorCore = new TestEditorCore()
+    const factory = () => editorCore
 
     async function renderEditor(value) {
       const task = new Task()
@@ -77,9 +83,9 @@ describe('ReactEditorJS', () => {
     }
 
     await renderEditor(OLD_VALUE)
-    expect(factory.instance.value).toBe(OLD_VALUE)
+    expect(editorCore.data).toBe(OLD_VALUE)
 
     await renderEditor(NEW_VALUE)
-    expect(factory.instance.value).toBe(NEW_VALUE)
+    expect(editorCore.data).toBe(NEW_VALUE)
   })
 })
