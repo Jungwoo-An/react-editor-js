@@ -1420,7 +1420,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/@react-editor-js-server-virtual-2f3748be85/1/packages/@react-editor-js/server/",
           "packageDependencies": [
             ["@react-editor-js/server", "virtual:4a6625c4b2e390f05712a53905d07a9bb31b321796835eac85dafc36cc372e8609559744fc2166d75ef6a59670220f76b4fc0dcb1521667fcb6f6758e80f8494#workspace:packages/@react-editor-js/server"],
+            ["@editorjs/editorjs", "npm:2.22.3"],
+            ["@editorjs/paragraph", "npm:2.8.0"],
             ["@react-editor-js/core", "virtual:eeb0d27880fc71d7dbdd75f46f96f2cd8c3469844f42ed8de1a5901da8507ca8a61db6d3a214e4f8ab09bd225e7e7aafc68ad2322d87d5811b50bdc2842d9768#workspace:packages/@react-editor-js/core"],
+            ["@types/editorjs__editorjs", null],
+            ["@types/editorjs__paragraph", null],
             ["@types/react", "npm:17.0.33"],
             ["@types/react-editor-js__core", null],
             ["react", "npm:17.0.2"],
@@ -1428,6 +1432,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=ddd1e8"]
           ],
           "packagePeers": [
+            "@types/editorjs__editorjs",
+            "@types/editorjs__paragraph",
             "@types/react-editor-js__core"
           ],
           "linkType": "SOFT",
@@ -1436,6 +1442,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/@react-editor-js/server/",
           "packageDependencies": [
             ["@react-editor-js/server", "workspace:packages/@react-editor-js/server"],
+            ["@editorjs/editorjs", "npm:2.22.3"],
+            ["@editorjs/paragraph", "npm:2.8.0"],
             ["@react-editor-js/core", "virtual:eeb0d27880fc71d7dbdd75f46f96f2cd8c3469844f42ed8de1a5901da8507ca8a61db6d3a214e4f8ab09bd225e7e7aafc68ad2322d87d5811b50bdc2842d9768#workspace:packages/@react-editor-js/core"],
             ["@types/react", "npm:17.0.33"],
             ["react", "npm:17.0.2"],

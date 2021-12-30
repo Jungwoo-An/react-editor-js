@@ -13,6 +13,8 @@
     "url": "https://github.com/Jungwoo-An/react-editor-js/issues"
   },
   "peerDependencies": {
+    "@editorjs/editorjs": "*",
+    "@editorjs/paragraph": "*",
     "@react-editor-js/core": "2.0.5",
     "react": "*"
   },
@@ -20,6 +22,8 @@
     "@react-editor-js/core": "2.0.5"
   },
   "devDependencies": {
+    "@editorjs/editorjs": "*",
+    "@editorjs/paragraph": "*",
     "@types/react": "*",
     "react": "*",
     "tslib": "^2.3.1",
