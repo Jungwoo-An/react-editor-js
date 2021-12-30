@@ -148,17 +148,30 @@ It's simpleeeee
 
 ### How to access editor-js instance?
 
-You can access using instanceRef
+The editor-js instance is inaccessible. However, you can access the abstracted editor-js for isomorphic react-editor-js.
+
+```ts
+// abstracted editor-js interface
+interface EditorCore {
+  destroy(): Promise<void>
+
+  clear(): Promise<void>
+
+  save(): Promise<OutputData>
+
+  render(data: OutputData): Promise<void>
+}
+```
 
 ```tsx
-const editorJS = React.useRef(null)
+const editorCore = React.useRef(null)
 
 const handleInitialize = React.useCallback((instance) => {
-  editorJS.current = instance
+  editorCore.current = instance
 }, [])
 
 const handleSave = React.useCallback(() => {
-  const savedData = await editorJS.current.save();
+  const savedData = await editorCore.current.save();
 }, [])
 
 <ReactEditorJS onInitialize={handleInitialize} defaultValue={blocks} />
