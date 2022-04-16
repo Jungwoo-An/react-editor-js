@@ -170,7 +170,7 @@ const handleInitialize = React.useCallback((instance) => {
   editorCore.current = instance
 }, [])
 
-const handleSave = React.useCallback(() => {
+const handleSave = React.useCallback(async () => {
   const savedData = await editorCore.current.save();
 }, [])
 
