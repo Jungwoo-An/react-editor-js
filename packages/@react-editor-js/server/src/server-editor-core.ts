@@ -19,4 +19,8 @@ export class ServerEditorCore implements EditorCore {
   public async destroy() {}
 
   public async render() {}
+
+  public async toggleReadOnly() {
+    return false
+  }
 }

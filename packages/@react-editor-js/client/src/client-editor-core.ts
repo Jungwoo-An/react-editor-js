@@ -36,4 +36,8 @@ export class ClientEditorCore implements EditorCore {
   public async render(data: OutputData) {
     await this._editorJS.render(data)
   }
+
+  public async toggleReadOnly() {
+    return this._editorJS.readOnly.toggle()
+  }
 }

@@ -8,4 +8,6 @@ export interface EditorCore {
   save(): Promise<OutputData>
 
   render(data: OutputData): Promise<void>
+
+  toggleReadOnly(): Promise<boolean>
 }

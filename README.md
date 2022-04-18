@@ -7,7 +7,9 @@
 <div>
 
 [![npm version](https://badge.fury.io/js/react-editor-js.svg)](https://badge.fury.io/js/react-editor-js)
+
 ![LICENSE](https://img.shields.io/npm/l/react-editor-js?color=blue)
+
 [![Github Build Status](https://github.com/Jungwoo-An/react-editor-js/workflows/release/badge.svg)](https://github.com/Jungwoo-An/react-editor-js/actions)
 [![Semantic Release enabled](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
@@ -15,26 +17,26 @@
 
 ## 🍞 DEMO
 
-- [CodeSandbox](https://codesandbox.io/s/react-editor-js-v2-34bfl)
+* [CodeSandbox](https://codesandbox.io/s/react-editor-js-v2-34bfl)
 
 ## 🍀 Supported Official Plugin
 
-- [x] Paragraph (default)
-- [x] Embed
-- [x] Table
-- [x] List
-- [x] Warning
-- [x] Code
-- [x] Link
-- [x] Image
-- [x] Raw
-- [x] Header
-- [x] Quote
-- [x] Marker
-- [x] CheckList
-- [x] Delimiter
-- [x] InlineCode
-- [x] SimpleImage
+* [x] Paragraph (default)
+* [x] Embed
+* [x] Table
+* [x] List
+* [x] Warning
+* [x] Code
+* [x] Link
+* [x] Image
+* [x] Raw
+* [x] Header
+* [x] Quote
+* [x] Marker
+* [x] CheckList
+* [x] Delimiter
+* [x] InlineCode
+* [x] SimpleImage
 
 ## 🤟🏻 Getting Started
 
@@ -68,7 +70,7 @@ Allow all options of [editor-js](https://github.com/codex-team/editor.js/blob/ma
 
 There is an only Paragraph block already included in Editor.js. Probably you want to use several Block Tools that should be installed and connected.
 
-To add more Block Tools, simply add them to your repo and pass them as `tools`-property to your editor:
+To add more Block Tools, simply add them to your repo and pass them as `tools` -property to your editor:
 
 ```
 npm install --save-dev @editorjs/checklist
@@ -160,6 +162,8 @@ interface EditorCore {
   save(): Promise<OutputData>
 
   render(data: OutputData): Promise<void>
+
+  toggleReadOnly(): Promise<boolean>
 }
 ```
 
