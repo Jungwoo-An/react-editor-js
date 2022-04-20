@@ -35,4 +35,10 @@ export class TestEditorCore implements EditorCore {
     this._readOnly = !this._readOnly
     return this._readOnly
   }
+  
+  public async insertBlock() {}
+
+  public async updateBlock() {}
+
+  public async deleteBlock() {}
 }

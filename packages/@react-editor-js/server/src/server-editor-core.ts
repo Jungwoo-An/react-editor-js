@@ -23,4 +23,10 @@ export class ServerEditorCore implements EditorCore {
   public async toggleReadOnly() {
     return false
   }
+
+  public async insertBlock() {}
+
+  public async updateBlock() {}
+
+  public async deleteBlock() {}
 }

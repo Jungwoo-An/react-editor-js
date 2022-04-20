@@ -1,4 +1,4 @@
-import EditorJS, { EditorConfig, OutputData } from '@editorjs/editorjs'
+import EditorJS, { EditorConfig, OutputData, BlockToolData, ToolConfig } from '@editorjs/editorjs'
 import Paragraph from '@editorjs/paragraph'
 import { EditorCore } from '@react-editor-js/core'
 
@@ -39,5 +39,17 @@ export class ClientEditorCore implements EditorCore {
 
   public async toggleReadOnly() {
     return this._editorJS.readOnly.toggle()
+  }
+
+  public async insertBlock(type?: string, data?: BlockToolData, config?: ToolConfig, index?: number, needToFocus?: boolean) {
+    return this._editorJS.blocks.insert(type, data, config, index, needToFocus)
+  }
+
+  public async updateBlock(id?: string, data?: BlockToolData) {
+    return this._editorJS.blocks.update(id, data)
+  }
+
+  public async deleteBlock(index?: number) {
+    return this._editorJS.blocks.delete(index)
   }
 }
