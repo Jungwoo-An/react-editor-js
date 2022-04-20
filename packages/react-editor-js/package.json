@@ -13,12 +13,12 @@
     "url": "https://github.com/Jungwoo-An/react-editor-js/issues"
   },
   "peerDependencies": {
-    "@react-editor-js/client": "2.0.6",
-    "@react-editor-js/server": "2.0.6"
+    "@react-editor-js/client": "proteye/react-editor-js#feature\/editor_core_extension",
+    "@react-editor-js/server": "proteye/react-editor-js#feature\/editor_core_extension"
   },
   "dependencies": {
-    "@react-editor-js/client": "2.0.6",
-    "@react-editor-js/server": "2.0.6"
+    "@react-editor-js/client": "proteye/react-editor-js#feature\/editor_core_extension",
+    "@react-editor-js/server": "proteye/react-editor-js#feature\/editor_core_extension"
   },
   "devDependencies": {
     "@types/node": "^16.11.6",
