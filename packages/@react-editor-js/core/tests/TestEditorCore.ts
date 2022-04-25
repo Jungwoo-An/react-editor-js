@@ -41,4 +41,22 @@ export class TestEditorCore implements EditorCore {
   public async updateBlock() {}
 
   public async deleteBlock() {}
+
+  public async setToFirstBlock() {
+    return false
+  }
+
+  public async setToLastBlock() {
+    return false
+  }
+
+  public async setToBlock() {
+    return false
+  }
+
+  public async focus() {}
+
+  public async openToolbar() {}
+
+  public async closeToolbar() {}
 }

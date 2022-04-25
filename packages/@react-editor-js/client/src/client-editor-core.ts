@@ -52,4 +52,28 @@ export class ClientEditorCore implements EditorCore {
   public async deleteBlock(index?: number) {
     return this._editorJS.blocks.delete(index)
   }
+
+  public async setToFirstBlock(position: string = this._editorJS.Caret.positions.DEFAULT, offset: number = 0) {
+    return this._editorJS.caret.setToFirstBlock(position, offset)
+  }
+
+  public async setToLastBlock(position: string = this._editorJS.Caret.positions.DEFAULT, offset: number = 0) {
+    return this._editorJS.caret.setToLastBlock(position, offset)
+  }
+
+  public async setToBlock(index: number, position: string = this._editorJS.Caret.positions.DEFAULT, offset: number = 0) {
+    return this._editorJS.caret.setToBlock(index, position, offset)
+  }
+
+  public async focus(atEnd: boolean = false) {
+    return this._editorJS.caret.focus(atEnd)
+  }
+
+  public async openToolbar() {
+    return this._editorJS.toolbar.open()
+  }
+
+  public async closeToolbar() {
+    return this._editorJS.toolbar.close()
+  }
 }
