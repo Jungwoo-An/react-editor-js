@@ -15,7 +15,6 @@
   "peerDependencies": {
     "@editorjs/editorjs": "*",
     "@editorjs/paragraph": "*",
-    "@react-editor-js/core": "2.0.6",
     "react": "*"
   },
   "dependencies": {
