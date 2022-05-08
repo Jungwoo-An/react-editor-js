@@ -30,6 +30,7 @@ export class ClientEditorCore implements EditorCore {
   }
 
   public async destroy() {
+    await this._editorJS.isReady
     await this._editorJS.destroy()
   }
 
