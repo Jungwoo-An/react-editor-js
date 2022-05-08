@@ -12,12 +12,9 @@
   "bugs": {
     "url": "https://github.com/Jungwoo-An/react-editor-js/issues"
   },
-  "peerDependencies": {
-    "@react-editor-js/client": "2.0.6",
-    "@react-editor-js/server": "2.0.6"
-  },
   "dependencies": {
     "@react-editor-js/client": "2.0.6",
+    "@react-editor-js/core": "2.0.6",
     "@react-editor-js/server": "2.0.6"
   },
   "devDependencies": {
