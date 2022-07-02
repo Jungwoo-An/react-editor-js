@@ -21,6 +21,10 @@ export class ClientEditorCore implements EditorCore {
     })
   }
 
+  public get dangerouslyLowLevelInstance() {
+    return this._editorJS
+  }
+
   public async clear() {
     await this._editorJS.clear()
   }

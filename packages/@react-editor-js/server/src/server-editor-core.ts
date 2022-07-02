@@ -10,6 +10,10 @@ export class ServerEditorCore implements EditorCore {
     }
   }
 
+  public get dangerouslyLowLevelInstance() {
+    return null
+  }
+
   public async clear() {}
 
   public async save() {

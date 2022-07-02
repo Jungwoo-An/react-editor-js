@@ -11,6 +11,10 @@ export class TestEditorCore implements EditorCore {
     return this._data
   }
 
+  public get dangerouslyLowLevelInstance() {
+    return null
+  }
+
   public async clear() {}
 
   public async save() {
