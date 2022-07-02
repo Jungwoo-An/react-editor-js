@@ -177,6 +177,29 @@ const handleSave = React.useCallback(async () => {
 <ReactEditorJS onInitialize={handleInitialize} defaultValue={blocks} />
 ```
 
+If you want to access low-level instance, you can use `dangerouslyLowLevelInstance`
+
+⚠️ dangerouslyLowLevelInstance depends on the execution environment.
+
+| Environment | Instnace Type |
+| - | - |
+| Browser | EditorJS instance|
+| NodeJS | null |
+
+```tsx
+const editorCore = React.useRef(null)
+
+const handleInitialize = React.useCallback((instance) => {
+  editorCore.current = instance
+}, [])
+
+const handleSave = React.useCallback(async () => {
+  const savedData = await editorCore.current.dangerouslyLowLevelInstance?.save();
+}, [])
+
+<ReactEditorJS onInitialize={handleInitialize} defaultValue={blocks} />
+```
+
 ### Haven't received data from server (when use Link)
 
 You should set linkTool [config](https://github.com/editor-js/link#usage). 💪🏻
