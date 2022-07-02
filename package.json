@@ -1,6 +1,6 @@
 {
   "author": "Jungwoo An <o1o9814@naver.com>",
-  "version": "2.0.6",
+  "version": "2.1.0",
   "private": true,
   "scripts": {
     "release": "release-it",

@@ -1,6 +1,6 @@
 {
   "name": "@react-editor-js/core",
-  "version": "2.0.6",
+  "version": "2.1.0",
   "description": "The unofficial editor-js component for React on client",
   "main": "./dist/core.cjs.js",
   "module": "./dist/core.js",
