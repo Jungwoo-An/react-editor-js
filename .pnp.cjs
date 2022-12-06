@@ -6711,7 +6711,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["parse-path", "npm:4.0.3"],
             ["is-ssh", "npm:1.3.3"],
             ["protocols", "npm:1.4.8"],
-            ["qs", "npm:6.10.1"],
+            ["qs", "npm:6.11.0"],
             ["query-string", "npm:6.14.1"]
           ],
           "linkType": "HARD",
@@ -7033,10 +7033,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["qs", [
-        ["npm:6.10.1", {
-          "packageLocation": "./.yarn/cache/qs-npm-6.10.1-12d3ab7795-00e390dbf9.zip/node_modules/qs/",
+        ["npm:6.11.0", {
+          "packageLocation": "./.yarn/cache/qs-npm-6.11.0-caf1bc9dea-6e1f29dd53.zip/node_modules/qs/",
           "packageDependencies": [
-            ["qs", "npm:6.10.1"],
+            ["qs", "npm:6.11.0"],
             ["side-channel", "npm:1.0.4"]
           ],
           "linkType": "HARD",
