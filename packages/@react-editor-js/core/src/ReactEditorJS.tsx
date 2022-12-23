@@ -14,7 +14,10 @@ function ReactEditorJS({
   ...restProps
 }: Props): React.ReactElement {
   const memoizedHolder = React.useRef(
-    holder ?? `react-editor-js-${Date.now().toString(16)}`
+    holder ??
+      `react-editor-js-${(
+        Math.floor(Math.random() * 1000) + Date.now()
+      ).toString(36)}`
   )
 
   const editorJS = React.useRef<EditorCore | null>(null)
