@@ -821,13 +821,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-editor-js/client@2.0.6, @react-editor-js/client@workspace:packages/@react-editor-js/client":
+"@react-editor-js/client@2.1.0, @react-editor-js/client@workspace:packages/@react-editor-js/client":
   version: 0.0.0-use.local
   resolution: "@react-editor-js/client@workspace:packages/@react-editor-js/client"
   dependencies:
     "@editorjs/editorjs": "*"
     "@editorjs/paragraph": "*"
-    "@react-editor-js/core": 2.0.6
+    "@react-editor-js/core": 2.1.0
     "@types/react": "*"
     react: "*"
     tslib: ^2.3.1
@@ -839,7 +839,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-editor-js/core@2.0.6, @react-editor-js/core@workspace:packages/@react-editor-js/core":
+"@react-editor-js/core@2.1.0, @react-editor-js/core@workspace:packages/@react-editor-js/core":
   version: 0.0.0-use.local
   resolution: "@react-editor-js/core@workspace:packages/@react-editor-js/core"
   dependencies:
@@ -857,13 +857,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-editor-js/server@2.0.6, @react-editor-js/server@workspace:packages/@react-editor-js/server":
+"@react-editor-js/server@2.1.0, @react-editor-js/server@workspace:packages/@react-editor-js/server":
   version: 0.0.0-use.local
   resolution: "@react-editor-js/server@workspace:packages/@react-editor-js/server"
   dependencies:
     "@editorjs/editorjs": "*"
     "@editorjs/paragraph": "*"
-    "@react-editor-js/core": 2.0.6
+    "@react-editor-js/core": 2.1.0
     "@types/react": "*"
     react: "*"
     tslib: ^2.3.1
@@ -4566,13 +4566,11 @@ __metadata:
   linkType: hard
 
 "json5@npm:2.x, json5@npm:^2.1.2":
-  version: 2.2.0
-  resolution: "json5@npm:2.2.0"
-  dependencies:
-    minimist: ^1.2.5
+  version: 2.2.3
+  resolution: "json5@npm:2.2.3"
   bin:
     json5: lib/cli.js
-  checksum: e88fc5274bb58fc99547baa777886b069d2dd96d9cfc4490b305fd16d711dabd5979e35a4f90873cefbeb552e216b041a304fe56702bedba76e19bc7845f208d
+  checksum: 2a7436a93393830bce797d4626275152e37e877b265e94ca69c99e3d20c2b9dab021279146a39cdb700e71b2dd32a4cebd1514cd57cee102b1af906ce5040349
   languageName: node
   linkType: hard
 
@@ -5802,9 +5800,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "react-editor-js@workspace:packages/react-editor-js"
   dependencies:
-    "@react-editor-js/client": 2.0.6
-    "@react-editor-js/core": 2.0.6
-    "@react-editor-js/server": 2.0.6
+    "@react-editor-js/client": 2.1.0
+    "@react-editor-js/core": 2.1.0
+    "@react-editor-js/server": 2.1.0
     "@types/node": ^16.11.6
     tslib: ^2.3.1
     typescript: ^4.3.5
