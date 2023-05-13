@@ -14,13 +14,17 @@ export class ServerEditorCore implements EditorCore {
     return null
   }
 
-  public async clear() {}
+  public async clear() { }
 
   public async save() {
     return this._memoizedData
   }
 
-  public async destroy() {}
+  public async destroy() { }
 
-  public async render() {}
+  public async render() { }
+
+  public async renderFromHTML(html: string): Promise<void> {
+
+  }
 }

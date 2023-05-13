@@ -9,5 +9,7 @@ export interface EditorCore {
 
   render(data: OutputData): Promise<void>
 
+  renderFromHTML(html: string): Promise<void>
+
   get dangerouslyLowLevelInstance(): any | null
 }
