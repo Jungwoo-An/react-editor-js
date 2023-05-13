@@ -41,4 +41,8 @@ export class ClientEditorCore implements EditorCore {
   public async render(data: OutputData) {
     await this._editorJS.render(data)
   }
+
+  public async renderFromHTML(html: string): Promise<void> {
+    await this._editorJS.blocks.renderFromHTML(html)
+  }
 }
