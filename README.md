@@ -181,7 +181,7 @@ If you want to access low-level instance, you can use `dangerouslyLowLevelInstan
 
 ⚠️ dangerouslyLowLevelInstance depends on the execution environment.
 
-| Environment | Instnace Type |
+| Environment | Instance Type |
 | - | - |
 | Browser | EditorJS instance|
 | NodeJS | null |
